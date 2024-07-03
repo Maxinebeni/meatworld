@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <link rel="shortcut icon" href="img/fav.png">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meat World- Africas Finest Meat</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <script>
+        function updateCartDisplay() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let totalQuantity = 0;
+            let totalPrice = 0;
+    
+            cart.forEach(item => {
+                totalQuantity += parseInt(item.quantity, 10);
+                totalPrice += item.price * item.quantity;
+            });
+    
+            document.getElementById('cart-count').innerText = totalQuantity;
+            document.getElementById('cart-price').innerText = `RWF ${totalPrice.toLocaleString()}`;
+        }
+    
+        document.addEventListener('DOMContentLoaded', updateCartDisplay);
+    </script>
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> info@meatworld.rw</li>
+                                <li><i class="fa fa-phone"></i>+250 788 313 970 | +250 786 052 729</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/logo.png" width="170" height="100" SSalt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li><a href="./shop-details.html">Shop</a></li>
+                            <li><a href="./shop-grid.html">About Us</a></li>
+                             <li><a href="#">Quick Links</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="./shop-details.html">My Wishlist</a></li>
+                                    <li><a href="./shoping-cart.html">My Shopping Cart</a></li>
+                                    <li><a href="./checkout.html">Check Out</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span id="wishlist-count">1</span></a></li>
+                            <li><a href="shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span id="cart-count">0</span></a></li>
+                        </ul>
+                        <div class="header__cart__price">item: <span id="cart-price">RWF 0</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <br><br>
+
+    <!-- Hero Section Begin -->
+    <!-- Hero Section End -->
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Contact Us</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                    <div class="contact__widget">
+                        <span class="icon_phone"></span>
+                        <h4>Phone</h4>
+                        <p>(+250) 788 313 970</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                    <div class="contact__widget">
+                        <span class="icon_pin_alt"></span>
+                        <h4>Address</h4>
+                        <p> Kagenge, Mayange Bugesera District</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                    <div class="contact__widget">
+                        <span class="icon_clock_alt"></span>
+                        <h4>Open time</h4>
+                        <p>8:00 am to 5:00 pm</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                    <div class="contact__widget">
+                        <span class="icon_mail_alt"></span>
+                        <h4>Email</h4>
+                        <p>info@meatworld.rw</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Map Begin -->
+    <div class="map">
+        <iframe
+           src="https://www.google.com/maps/place/Meat+World+Holdings+Limited/@-2.2093361,30.1327216,17z/data=!3m1!4b1!4m6!3m5!1s0x19c357a7ba53ab9d:0x2be6974584aea93d!8m2!3d-2.2093361!4d30.1327216!16s%2Fg%2F11rggj9x00?entry=ttu"
+            height="500" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <div class="map-inside">
+            <i class="icon_pin"></i>
+            <div class="inside-widget">
+                <h4> Kagenge, Mayange
+                    Bugesera District</h4>
+                <ul>
+                    <li>Phone:  (+250) 788 313 970
+                    </li>
+                    <li> Kagenge, Mayange
+                        Bugesera District</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Map End -->
+
+<!-- Contact Form Begin -->
+<div class="contact-form spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact__form__title">
+                    <h2>Leave Message</h2>
+                </div>
+            </div>
+        </div>
+
+        <form action="https://formspree.io/f/xblrjyeg" method="POST" class="form-area mt-60 contact-form text-right">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <input id="nameField" name="name" placeholder="Enter your name" type="text" required class="common-input"> 
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input id="emailField" name="email" placeholder="Enter your email" type="email" required class="common-input">
+                </div>
+                <div class="col-lg-12 text-center">
+                    <textarea placeholder="Your message" name="message" required></textarea>
+                    <button type="submit" class="site-btn">SEND MESSAGE</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+    <!-- Contact Form End -->
+
+   <!-- Footer Section Begin -->
+   <footer class="footer spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="footer__about">
+                    <div class="footer__about__logo">
+                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    </div>
+                    <ul>
+                        <li>MEAT WORLD LTD </li>
+                        <li> Kagenge, Mayange Bugesera District</li>
+                        <li>Phone:  +250 788 313 970 </li>
+                        <li>Email: info@meatworld.rw</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                <div class="footer__widget">
+                    <h6>Useful Links</h6>
+                    <ul>
+                        <li><a href="./shop-grid.html">About Us</a></li>
+                        <li><a href="./shop-details.html">Shop</a></li>
+                        <li><a href="./faqs-details.html">FAQs</a></li>
+                        <li><a href="./careers.html">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="footer__widget">
+                    <h6>Join Our Newsletter Now</h6>
+                    <p>Get E-mail updates about our latest shop and special offers.</p>
+                    <form id="newsletterForm" class="navbar-form" novalidate="true">
+                        <input id="emailField" class="form-control" name="entry.1642077625" placeholder="Email address" required="" type="email">
+                        <button type="submit" class="site-btn">Subscribe</button>
+                    </form>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer__copyright">
+                    <div class="footer__copyright__text"><p class="footer-text m-0">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <strong> Meat World LTD</strong> </p></div>
+                    <div class="footer__copyright__payment"><img src="img/payment-item.png" alt="" width="300" height="100"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/ani.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var form = document.getElementById("newsletterForm");
+        
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+        
+                // Fetch the form data
+                var formData = new FormData(form);
+        
+                // Replace with your Google Form endpoint
+                var endpoint = "https://forms.gle/XMc4akkhXD6XnfMe8";
+        
+                // Create and send a POST request
+                fetch(endpoint, {
+                    method: "POST",
+                    body: formData,
+                    mode: "cors" // This avoids CORS issues (may not work on all browsers)
+                }).then(function(response) {
+                    // Handle the response if needed
+                    console.log("Form submitted successfully");
+                    form.reset(); // Optionally reset the form after successful submission
+                }).catch(function(error) {
+                    // Handle errors
+                    console.error("Form submission error:", error);
+                });
+            });
+        });
+        </script>
+        
+
+
+
+</body>
+
+</html>

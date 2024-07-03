@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <link rel="shortcut icon" href="img/fav.png">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meat World Rw Online Butchery</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+   <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+
+    <script>
+        function updateCartDisplay() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let totalQuantity = 0;
+            let totalPrice = 0;
+    
+            cart.forEach(item => {
+                totalQuantity += parseInt(item.quantity, 10);
+                totalPrice += item.price * item.quantity;
+            });
+    
+            document.getElementById('cart-count').innerText = totalQuantity;
+            document.getElementById('cart-price').innerText = `RWF ${totalPrice.toLocaleString()}`;
+        }
+    
+        document.addEventListener('DOMContentLoaded', updateCartDisplay);
+    </script>
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Humberger Begin -->
+    <div class="humberger__menu__overlay"></div>
+    <div class="humberger__menu__wrapper">
+        <div class="humberger__menu__logo">
+            <a href="../index.html"><img src="../img/logo.png" width="170" height="100" alt=""></a>
+        </div>
+        <div class="humberger__menu__cart">
+            <ul>
+                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+            </ul>
+            <div class="header__cart__price">item: <span>RWF150 000</span></div>
+        </div>
+        <div class="humberger__menu__widget">
+            <div class="header__top__right__language">
+                <img src="img/language.png" alt="">
+                <div>English</div>
+                <span class="arrow_carrot-down"></span>
+                <ul>
+                    <li><a href="#">Shona</a></li>
+                    <li><a href="#">English</a></li>
+                </ul>
+            </div>
+            <div class="header__top__right__auth">
+                <a href="#"><i class="fa fa-user"></i> Login</a>
+            </div>
+        </div>
+        <nav class="humberger__menu__nav mobile-menu">
+                        <ul>
+                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li><a href="./shop-details.html">Shop</a></li>
+                            <li><a href="./shop-grid.html">Our Meat</a></li>
+                             <li><a href="#">Shopping</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="./shop-details.html">Butchery Details</a></li>
+                                    <li><a href="./shoping-cart.html">Shopping Cart</a></li>
+                                    <li><a href="./checkout.html">Check Out</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="header__top__right__social">
+            <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                            <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="" target="_blank"><i class="fa fa-instagram"></i></a>
+        </div>
+        <div class="humberger__menu__contact">
+            <ul>
+                <li><i class="fa fa-envelope"></i>info@meatworld.rw</li>
+                <li><i class="fa fa-truck"></i>+250 788 313 970</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Humberger End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> info@meatworld.rw</li>
+                                <li><i class="fa fa-phone"></i>+250 788 313 970 | +250 786 052 729</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                            <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                            <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="" target="_blank"><i class="fa fa-instagram"></i></a>
+                            </div>
+                            <div class="header__top__right__auth">
+                                <a href="#"><i class="fa fa-user"></i>Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="../index.html"><img src="../img/logo.png" width="220" height="130" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="../index.html">Home</a></li>
+                            <li><a href="../shop-details.html">Shop</a></li>
+                            <li><a href="../shop-grid.html">About Us</a></li>
+                             <li><a href="#">Quick Links</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="../shop-details.html">My Wishlist</a></li>
+                                    <li><a href="../shoping-cart.html">My Shopping Cart</a></li>
+                                    <li><a href="../checkout.html">Check Out</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span id="wishlist-count">1</span></a></li>
+                            <li><a href="shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span id="cart-count">0</span></a></li>
+                        </ul>
+                        <div class="header__cart__price">item: <span id="cart-price">RWF 0</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>All Products</span>
+                        </div>
+                        <ul>
+                            <li><a href="../shop-details.html">Beef</a></li>
+                            <li><a href="../shop-details.html">Pork</a></li>
+                            <li><a href="../shop-details.html">Sausages</a></li>
+                            <li><a href="../shop-details.html">Delicatessen </a></li>
+                            <li><a href="../shop-details.html">Chicken </a></li>
+                            <li><a href="../shop-details.html">Lamb </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form action="#">
+                                <div class="hero__search__categories">
+                                    All Categories
+                                    <span class="arrow_carrot-down"></span>
+                                </div>
+                                <input type="text" placeholder="What do yo u need?">
+                                <button type="submit" class="site-btn">SEARCH</button>
+                            </form>
+                        </div>
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <a href="tel:+263774462007"><i class="fa fa-phone"></i></a>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5>+250 788 313 970</h5>
+                                <span>Open 8am-7pm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="../img/breadcrumb.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Product Details</h2>
+                        <div class="breadcrumb__option">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+     
+    <!-- Product Details Section Begin -->
+    <section class="product-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__pic">
+                        <div class="product__details__pic__item">
+                            <img class="product__details__pic__item--large" src="../img/featured/liver.png" alt="">
+                        </div>
+                        <div class="product__details__pic__slider owl-carousel">
+                            <a href="beef-shoulder.html"><img data-imgbigurl="../img/featured/beef-shoulder.png" src="../img/featured/beef-shoulder.png" alt=""></a>
+                            <a href="strip-loin.html"><img data-imgbigurl="../img/featured/strip-loin.png" src="../img/featured/strip-loin.png" alt=""></a>
+                            <a href="bones.html"><img data-imgbigurl="../img/featured/beef-bones.png" src="../img/featured/beef-bones.png" alt=""></a>
+                            <a href="beef-steak.html"><img data-imgbigurl="../img/featured/beef-steak.png" src="../img/featured/beef-steak.png"alt=""></a>
+                            <a href="heart.html"><img data-imgbigurl="../img/featured/heart.png" src="../img/featured/heart.png" alt=""></a>
+                            <a href="kidney.html"><img data-imgbigurl="../img/featured/kidney.png" src="../img/featured/kidney.png" alt=""></a>
+                            <a href="liver.html"><img data-imgbigurl="../img/featured/liver.png" src="../img/featured/liver.png" alt=""></a>
+                            <a href="ossubucco.html"><img data-imgbigurl="../img/featured/ossubucco.png" src="../img/featured/ossubucco.png" alt=""></a>
+                            <a href="oxtail.html"><img data-imgbigurl="../img/featured/oxtail.png" src="../img/featured/oxtail.png" alt=""></a>
+                            <a href="brisket.html"><img data-imgbigurl="../img/featured/brisket.png" src="../img/featured/brisket.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__text">
+                        <h3>Liver</h3>
+                        <div class="product__details__rating">
+                            <i class="fa fa-star-half-o"></i>
+                            <span>(No reviews yet)</span>
+                        </div>
+                        <div class="product__details__price">from RWF 3500</div>
+                        <div class="product__details__quantity">
+                            <div class="quantity">
+                                <div class="pro-qty">
+                                    <input type="text" id="quantity" value="1">
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="addToCart()" class="primary-btn">ADD TO CART</button>
+                        <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                        <ul>
+                            <li><b>Availability</b> <span>In Stock</span></li>
+                            <li><b>Delivery</b> <span>Delivery Available. <samp>Fresh Quality Guaranteed.</samp></span></li>
+                            <li><b>Weight</b> <span>1 kg</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Tab section for product description, details, and reviews -->
+                    <div class="col-lg-12">
+                    <div class="product__details__tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
+                                    aria-selected="true">Description</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"
+                                    aria-selected="false">Details</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab"
+                                    aria-selected="false">Review</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <h6>Products Infomation</h6>
+                                    <ul>
+                                        <li><p>1 kg per pack</p></li>
+                                        <li><p>300 - 350g</p></li>
+                                        <li><p>Incredible flavour</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <h6>Products Infomation</h6>
+
+                                     <ul>
+                                        <li><p>The price displayed is per 1kg per pack, total due may vary upon total weight at the time of delivery</p></li>
+                                        <li><p>Please be aware that your meat will be dispatched frozen.</p></li>
+                                        <li><p>For special delivery instructions, you can contact us via WhatsApp/text ONLY at +250 788 313 970</p></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-3" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <h6>Reviews</h6>
+
+                                   
+                                        <p>There are no reviews yet.</p>
+                                        <p>BE THE FIRST TO REVIEW THIS PACKAGE</p>
+                                        <p>Your email address will not be published. Required fields are marked *</p>
+                                
+
+                                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSenZpV0KgXTCvfPr6aI5R15KcyDjw7sUs9hMSFGuEVeESk5dA/formResponse" target="_self" method ="POST" class="form-area mt-60" class="contact-form text-right"> 
+
+                                    <div class="row">   
+                                        <div class="col-lg-6 form-group">
+
+                                            <input id="nameField" name="entry.1106141892" placeholder="Enter your name" type="text" required class="common-input mb-20 form-control"> 
+
+                                            <br>
+
+                                            <input id="emailField" name="entry.1337484688" placeholder="Enter your email" type="email" required class="common-input mb-20 form-control">
+                                    </div> 
+
+                                    <div class="col-lg-6 form-group">
+                                        <textarea class="common-textarea mt-10 form-control" name="entry.2108308525" placeholder="Message (Optional) " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" ></textarea>
+
+                                        <br>
+
+                                        <button id="send" type="submit" class="primary-btn mt-20">Submit<span class="lnr lnr-arrow-right"></span></button>
+                                                                    
+                                    </div></div>
+                                    </form> 
+
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Details Section End -->
+
+    <!-- Related Product Section Begin -->
+    <section class="related-product">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title related__product__title">
+                        <h2>Frequently Bought With</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="../img/featured/beef-fillet-cleaned.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="beef-fillet.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="beef-fillet.html">Beef Fillet Cleaned Whole</a></h6>
+                            <h5>RWF 15300 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="featured__item">
+                         <div class="featured__item__pic set-bg" data-setbg="../img/featured/oxtail.jpg">
+                             <ul class="featured__item__pic__hover">
+                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                 <li><a href="oxtail.html"><i class="fa fa-shopping-cart"></i></a></li>
+                             </ul>
+                         </div>
+                         <div class="featured__item__text">
+                             <h6><a href="oxtail.html">Oxtail Sliced</a></h6>
+                             <h5>RWF 7500/ Kg</h5>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-lg-3 col-md-4 col-sm-6">
+                     <div class="featured__item">
+                         <div class="featured__item__pic set-bg" data-setbg="../img/featured/brisket.jpg">
+                             <ul class="featured__item__pic__hover">
+                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                 <li><a href="brisket.html"><i class="fa fa-shopping-cart"></i></a></li>
+                             </ul>
+                         </div>
+                         <div class="featured__item__text">
+                             <h6><a href="brisket.html">Brisket Flat Cut Roast</a></h6>
+                             <h5>RWF 8200/ Kg</h5>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-lg-3 col-md-4 col-sm-6">
+                      <div class="featured__item">
+                         <div class="featured__item__pic set-bg" data-setbg="../img/featured/stewing-beef.jpg">
+                             <ul class="featured__item__pic__hover">
+                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                 <li><a href="stewing-beef.html"><i class="fa fa-shopping-cart"></i></a></li>
+                             </ul>
+                         </div>
+                         <div class="featured__item__text">
+                             <h6><a href="stewing-beef.html">Stewing Beef</a></h6>
+                             <h5>RWF 9000 / Kg</h5>
+                         </div>
+                     </div>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+    <!-- Related Product Section End -->
+    <!-- Related Product Section End -->
+
+    <!-- Footer Section Begin -->
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="../index.html"><img src="../img/logo.png" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>MEAT WORLD LTD </li>
+                            <li> Kagenge, Mayange Bugesera District</li>
+                            <li>Phone:  +250 788 313 970 </li>
+                            <li>Email: info@meatworld.rw</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Useful Links</h6>
+                        <ul>
+                            <li><a href="../shop-grid.html">About Us</a></li>
+                            <li><a href="../shop-details.html">Shop</a></li>
+                            <li><a href="../faqs-details.html">FAQs</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Join Our Newsletter Now</h6>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form class="navbar-form" novalidate="true" action="" target="_self" method ="POST">
+                            <input class="form-control" name="entry.1642077625" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" type="email">
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text"><p class="footer-text m-0">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <strong> Meat World LTD</strong> </p></div>
+                        <div class="footer__copyright__payment"><img src="../img/payment-item.png" alt="" width="300" height="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Js Plugins -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/mixitup.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
+
+
+    <script>
+        function addToCart() {
+            const product = {
+                name: "Liver",
+                price: 3500,
+                quantity: document.getElementById('quantity').value,
+                image: "../img/product/details/product-details-2.jpg"
+            };
+    
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+    
+            window.location.href = '../shoping-cart.html'; // Adjusted path to redirect to the cart page
+        }
+    </script>
+    
+
+
+</body>
+
+</html>

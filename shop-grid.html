@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Meat World Rwanda">
+    <link rel="shortcut icon" href="img/fav.png">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meat World Rwanda|Online Butchery</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <script>
+        function updateCartDisplay() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let totalQuantity = 0;
+            let totalPrice = 0;
+    
+            cart.forEach(item => {
+                totalQuantity += parseInt(item.quantity, 10);
+                totalPrice += item.price * item.quantity;
+            });
+    
+            document.getElementById('cart-count').innerText = totalQuantity;
+            document.getElementById('cart-price').innerText = `RWF ${totalPrice.toLocaleString()}`;
+        }
+    
+        document.addEventListener('DOMContentLoaded', updateCartDisplay);
+    </script>
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> info@meatworld.rw</li>
+                                <li><i class="fa fa-phone"></i>+250 788 313 970 | +250 786 052 729</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                            <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                            <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="" target="_blank"><i class="fa fa-instagram"></i></a>
+                            </div>
+                            <div class="header__top__right__auth">
+                                <a href="#"><i class="fa fa-user"></i>Login</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/logo.png" width="170" height="100" SSalt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li><a href="./shop-details.html">Shop</a></li>
+                            <li><a href="./shop-grid.html">About Us</a></li>
+                             <li><a href="#">Quick Links</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="mywishlist.html">My Wishlist</a></li>
+                                    <li><a href="./shoping-cart.html">My Shopping Cart</a></li>
+                                    <li><a href="./checkout.html">Check Out</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span id="wishlist-count">1</span></a></li>
+                            <li><a href="shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span id="cart-count">0</span></a></li>
+                        </ul>
+                        <div class="header__cart__price">item: <span id="cart-price">RWF 0</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <br><br>  
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Our Meat</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+     
+    <!-- Start offered Area -->
+            <section class="offered-area section-gap" id="project">
+                <div class="container">
+                    <div class="row d-flex justify-content-center">
+                        <div class="menu-content pb-60 col-lg-8">
+                            <div class="title text-center ani">
+                                <p> Meat World| The Meat here is
+                                  <span
+                                     class="txt-rotate"
+                                     data-period="2000"
+                                     data-rotate='[ "simply the best!" , "perhaps the best meat I have tasted" ]'></span>
+                                 </p>
+                            </div>
+                        </div>
+                    </div>  
+                    <br><br>  
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="single-offered">
+                                <center><img class="img-fluid" src="img/s1.png"  width="70" height="70" alt="" > </center><br>  
+                                <a href="#"><h5 style="text-align:center" class="pt-20 pb-20">100% Satisfaction Guaranteed.</h5></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="single-offered">
+                                <center><img class="img-fluid" src="img/s2.png"  width="70" height="70" alt=""></center><br>    
+                                <a href="#"><h5 style="text-align:center" class="pt-20 pb-20">Delivery Option Available.</h5></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="single-offered">
+                                <center><img class="img-fluid" src="img/s3.png"  width="70" height="70" alt=""></center><br>    
+                                <a href="#"><h5 style="text-align:center" class="pt-20 pb-20">Secure Payment Platform.</h5></a>
+                            </div>
+                        </div>                                              
+                    </div>
+                </div>  
+            </section>
+            <!-- End offered Area -->
+    
+    <br>     
+<!-- Blog Section Begin -->
+<section class="from-blog spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title from-blog__title">
+                    <h2>Company Values</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="blog__item">
+                    <div class="blog__item__pic">
+                        <i class="fa fa-bullseye fa-fw fa-4x"></i>
+                    </div>
+                    <div class="blog__item__text">
+                        <ul>
+                            <li><i class=""></i> Mission</li>
+                        </ul>
+                        <h5><a href="#">Provide the highest quality meats to our customers</a></h5>
+                        <p>Ensuring freshness, safety, and sustainability in every product. We strive to deliver an exceptional customer experience 
+                            through our convenient online platform and reliable delivery service, making premium meats accessible to 
+                            all Rwandan households.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="blog__item">
+                    <div class="blog__item__pic">
+                        <i class="fa fa-compass fa-fw fa-4x" aria-hidden="true"></i>
+                    </div>
+                    <div class="blog__item__text">
+                        <ul>
+                            <li><i class=""></i> Vision</li>
+                        </ul>
+                        <h5><a href="#">To be Rwanda’s leading meat butchery....</a></h5>
+                        <p>Recognized for our commitment to quality, innovation, and 
+                            customer satisfaction. We aim to revolutionize the meat industry in Rwanda by combining 
+                            traditional expertise with modern technology, to ensure our products exceed customer expectations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Section End -->
+    
+
+    <section class="ftco-about d-md-flex">
+        <div class="one-half img" style="background-image: url(img/goat.png);"></div>
+        <div class="one-half ">
+        <div class="heading-section">
+          <h2>A Thoughtful Approach</h2>
+        </div>
+        <div>
+                <p>At Meat World RW, we aim to reconnect people with nature and their food. We've become too disconnected from the sources of our sustenance. Our farmers' practices directly impact the quality of our meat and the environment. 
+                    It's not just about enjoying good food, but also knowing its origins and the impact of our choices on people and the planet. 
+                    We founded Meat World RW to drive this change, knowing the industry needed a shift and believing we could 'be the change'.
+                </p>
+            </div>
+        </div>
+    </section>
+
+     <br><br>  
+
+     <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>MEAT WORLD LTD </li>
+                            <li> Kagenge, Mayange Bugesera District</li>
+                            <li>Phone:  +250 788 313 970 </li>
+                            <li>Email: info@meatworld.rw</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Useful Links</h6>
+                        <ul>
+                            <li><a href="./shop-grid.html">About Us</a></li>
+                            <li><a href="./shop-details.html">Shop</a></li>
+                            <li><a href="./faqs-details.html">FAQs</a></li>
+                            <li><a href="./careers.html">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Join Our Newsletter Now</h6>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form class="navbar-form" novalidate="true" action="" target="_self" method ="POST">
+                            <input class="form-control" name="entry.1642077625" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" type="email">
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text"><p class="footer-text m-0">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <strong> Meat World LTD</strong> </p></div>
+                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt="" width="300" height="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/ani.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+</body>
+
+</html>
