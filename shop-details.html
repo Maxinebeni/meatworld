@@ -23,23 +23,6 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <script>
-        function updateCartDisplay() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let totalQuantity = 0;
-            let totalPrice = 0;
-    
-            cart.forEach(item => {
-                totalQuantity += parseInt(item.quantity, 10);
-                totalPrice += item.price * item.quantity;
-            });
-    
-            document.getElementById('cart-count').innerText = totalQuantity;
-            document.getElementById('cart-price').innerText = `RWF ${totalPrice.toLocaleString()}`;
-        }
-    
-        document.addEventListener('DOMContentLoaded', updateCartDisplay);
-    </script>
 
 </head>
 
@@ -48,6 +31,56 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
+
+            <!-- Humberger Begin -->
+            <div class="humberger__menu__overlay"></div>
+            <div class="humberger__menu__wrapper">
+                <div class="humberger__menu__logo">
+                    <a href="./index.html"><img src="img/logo.png" width="170" height="100" alt=""></a>
+                </div>
+                <div class="humberger__menu__cart">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-heart"></i> <span id="wishlist-count">1</span></a></li>
+                        <li><a href="shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span id="cart-count">0</span></a></li>
+                    </ul>
+                    <div class="header__cart__price">item: <span id="cart-price">RWF 0</span></div>
+               </div>
+                <div class="humberger__menu__widget">
+                    <div class="header__top__right__auth">
+                        <a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i> Login</a>
+                    </div>
+                </div>
+                <nav class="humberger__menu__nav mobile-menu">
+                                <ul>
+                                    <li class="active"><a href="./index.html">Home</a></li>
+                                    <li><a href="./shop-details.html">Shop</a></li>
+                                    <li><a href="./shop-grid.html">About Us</a></li>
+                                     <li><a href="#">Quick Links</a>
+                                        <ul class="header__menu__dropdown">
+                                            <li><a href="mywishlist.html">My Wishlist</a></li>
+                                            <li><a href="./shoping-cart.html">My Shopping Cart</a></li>
+                                            <li><a href="./checkout.html">Check Out</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="./contact.html">Contact</a></li>
+                                    </ul>
+                </nav>
+                <div id="mobile-menu-wrap"></div>
+                <div class="header__top__right__social">
+                    <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    <a href="" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                                    <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                                    <a href="" target="_blank"><i class="fa fa-instagram"></i></a>
+                </div>
+                <div class="humberger__menu__contact">
+                    <ul>
+                        <li><i class="fa fa-envelope"></i> info@meatworld.rw</li>
+                        <li><i class="fa fa-phone"></i>+250 788 313 970 | +250 786 052 729</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Humberger End -->
+    
 
 
     <!-- Header Section Begin -->
@@ -171,6 +204,7 @@
     </section>
     <!-- Hero Section End -->
 
+    <!-- Featured Section Begin -->
     <section class="featured spad" id="shop">
         <div class="container">
             <div class="row">
@@ -183,94 +217,64 @@
                             <li class="active" data-filter="*">All</li>
                             <li data-filter=".beef">Beef</li>
                             <li data-filter=".pork">Pork</li>
-                            <li data-filter=".sausages">Suasages</li>
-                            <li data-filter=".charcuterie">Charcuterie</li>
+                            <li data-filter=".sausages">Sausages</li>
+                            <li data-filter=".chicken">Chicken</li>
+                            <li data-filter=".lamb">Lamb</li>
+                            <li data-filter=".charcuterie">Delicatessen </li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="row featured__filter" id="product-list">
-                <!-- Beef Pistola -->
+                <!-- Beef Mix Cuts-->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pistola.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/mix-cuts.jpg">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart" data-product-id="beef-pistola" data-product-image="img/featured/pistola.png" data-product-price="2950"></i><span class="add-to-wishlist">Add to Wishlist</span></a></li>
-                                <li><a href="./beef/beef-pistola.html"><i class="fa fa-shopping-cart"></i><span class="add-to-cart">Add to Cart</span></a></li>
+                                <li><a href="#"><i class="fa fa-heart"></i><span class="add-to-wishlist">Add to Wishlist</span></a></li>
+                                <li><a href="./beef/mix-cuts.html"><i class="fa fa-shopping-cart"></i><span class="add-to-cart">Add to Cart</span></a></li>
                             </ul>
                                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./beef/beef-pistola.html">Beef Pistola</a></h6>
-                            <h5>RWF 2950 / Kg</h5>
+                            <h6><a href="./beef/mix-cuts.html">Mix Cuts Beef with Bone</a></h6>
+                            <h5>RWF 6100 / Kg</h5>
                         </div>
                     </div>
                 </div>
-                                <!-- Garlic Sausage -->
+                                <!-- Hot Smoked Sausage -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/garlic.png">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./sausages/garlic-sausage.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./sausages/hot-smoked.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./sausages/garlic-sausage.html">Garlic Sausage</a></h6>
-                            <h5>RWF 5500 / Kg</h5>
+                            <h6><a href="./sausages/hot-smoked.html">Hot Smoked Sausages (Mixte Beef & Pork) </a></h6>
+                            <h5>RWF 9000 / Kg</h5>
                         </div>
                     </div>
                 </div>
-                <!-- Smoked Sausages (Pili Pili) -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/smoked.png">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./sausages/smoked-sausages.html"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./sausages/smoked-sausages.html">Smoked Sausages (Pili Pili)</a></h6>
-                            <h5>RWF 4650 / Kg</h5>
-                        </div>
-                    </div>
-                </div>
-                   <!-- Pork Fillet -->
-                   <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/fillet.png">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./pork/pork-fillet.html"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./pork/pork-fillet.html">Pork Fillet</a></h6>
-                            <h5>RWF 6375 / Kg</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/beef.png">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./sausages/fresh-beef-sausages.html"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./sausages/fresh-beef-sausages.html">Fresh Beef Sausages</a></h6>
-                            <h5>RWF 4500 / Kg</h5>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Beef Fillet -->
+                                                <!-- Airdried Beef -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/fillet.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/airdried-beef.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/airdried-beef.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/airdried-beef.html">Bresaolla Airdried Beef</a></h6>
+                            <h5>RWF 12100 / 500grms</h5>
+                        </div>
+                    </div>
+                </div>                  
+                 <!-- Beef Fillet -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/beef-fillet-cleaned.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./beef/beef-fillet.html"><i class="fa fa-shopping-cart"></i></a></li>
@@ -278,16 +282,191 @@
                         </div>
                     </a>
                         <div class="featured__item__text">
-                            <h6><a href="./beef/beef-fillet.html">Beef Fillet</a></h6>
-                            <h5>RWF 7000 / Kg</h5>
+                            <h6><a href="./beef/beef-fillet.html">Beef Fillet Cleaned Whole</a></h6>
+                            <h5>RWF 15300 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
+             
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/boneless-chicken.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/boneless-chicken.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/boneless-chicken.html">Boneless Chicken Breast Free Range</a></h6>
+                            <h5>RWF 9000 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/smoked.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./sausages/smoked-sausages.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./sausages/smoked-sausages.html">Bars & resto grill smoked Sausage skewers</a></h6>
+                            <h5>RWF 9300 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
+                            <!-- Pork Fillet -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/fillet.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./pork/pork-fillet.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./pork/pork-fillet.html">Pork Fillet</a></h6>
+                            <h5>RWF 7000 / 500grms</h5>
+                        </div>
+                    </div>
+                </div>                
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/drumstick.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/drumstick.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/drumstick.html">Chicken Drumsticks Skin On</a></h6>
+                            <h5>RWF 8000 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
+  
+                
+                
+                <!-- Pork Diced -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/cubed.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./pork/cubed-pork.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./pork/cubed-pork.html">Pork Diced (cubed)</a></h6>
+                            <h5>RWF 8400 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                            
+                           <!-- Dry Wors -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/dry-wors.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/dry-wors.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/dry-wors.html">Dry Wors</a></h6>
+                            <h5>RWF 6700 /250grms </h5>
+                        </div>
+                    </div>
+                </div>               
+                 <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/jowl.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./pork/pork-jowl.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./pork/pork-jowl.html">Pork Jowl</a></h6>
+                            <h5>RWF 7600 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                            <!-- Dry Wors -->
+
+
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/beef.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./sausages/fresh-beef-sausages.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./sausages/fresh-beef-sausages.html">Fresh Beef Sausages</a></h6>
+                            <h5>RWF 9000 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                 
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/boneless_skin.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./pork/boneless-skin.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./pork/boneless-skin.html">Pork Loin Boneless Skin On</a></h6>
+                            <h5>RWF 9300 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                            <!-- Dry Wors -->
+
+
+
+                                <!-- Biltong -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/biltong.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/biltong.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                    </a>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/biltong.html">Traditional Biltong</a></h6>
+                            <h5>RWF 13000 / 250g</h5>
+                        </div>
+                    </div>
+                </div>                
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/wings.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/wings.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/wings.html">Chicken Wings Portioned</a></h6>
+                            <h5>RWF 6700 / Kg</h5>
                         </div>
                     </div>
                 </div>
 
+
+
                 <!-- Fresh Pork Sausages -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/pork.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/pork.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./sausages/fresh-pork-sausages.html"><i class="fa fa-shopping-cart"></i></a></li>
@@ -295,45 +474,237 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="./sausages/fresh-pork-sausages.html">Fresh Pork Sausages</a></h6>
-                            <h5>RWF 4500 / Kg</h5>
+                            <h5>RWF 9300 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                   
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/thighs.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/thighs.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/thighs.html">Chicken Thighs Boneless Skin On</a></h6>
+                            <h5>RWF 8700 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
+   
+                                            <!-- Chilli Bites -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chilli-bites.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/chilli-bites.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                    </a>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/chilli-bites.html">Chilli Bites</a></h6>
+                            <h5>RWF 10500 / 250grms</h5>
+                        </div>
+                    </div>
+                </div>
+                                                            <!-- Pot Roast -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pot-roast.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/pot-roast.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                    </a>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/pot-roast.html">7-bone Pot Roast</a></h6>
+                            <h5>RWF 8000 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                  
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/whole-legs.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/whole-legs.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/whole-legs.html">Chicken Whole Legs </a></h6>
+                            <h5>RWF 7500 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/classic-cakes.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/classic-cakes.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/classic-cakes.html">Classic MW Chicken Cakes</a></h6>
+                            <h5>RWF 9300 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
+              
+                             <!-- Beef PATTY -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/beef-patty.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/beef-patty.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                    </a>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/beef-patty.html">Beef Patties</a></h6>
+                            <h5>RWF 9300 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/raw-cakes.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/raw-cakes.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/raw-cakes.html">Classic Raw Ready Meats Cakes</a></h6>
+                            <h5>RWF 5500 / Kg</h5>
                         </div>
                     </div>
                 </div>
 
-                  <!-- Pork Leg / Roast Pork (Boneless) -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/leg.png">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./pork/pork-leg.html"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./pork/pork-leg.html">Pork Leg / Roast Pork (Boneless)</a></h6>
-                            <h5>RWF 4000 / Kg</h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- English Style Streaky Bacon -->
+                         <!-- French Pork Bologna -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/streaky-bacon.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/french-pork-bologna.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./charcuterie/streaky-bacon.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./charcuterie/pork-bologna.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./charcuterie/streaky-bacon.html">English Style Streaky Bacon</a></h6>
-                            <h5>RWF 12800 / Kg</h5>
+                            <h6><a href="./charcuterie/pork-bologna.html">French-Pork-Bologna</a></h6>
+                            <h5>RWF 9300 / Kg</h5>
+                        </div>
+                    </div>
+                </div>               
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/breast.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/breast.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/breast.html">Classic Raw Wrapped Chicken Breast 300grms</a></h6>
+                            <h5>RWF 5300 / 1PC per Pack</h5>
+                        </div>
+                    </div>
+                </div>                
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/breast.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/bones.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/bones.html">Chicken Bones</a></h6>
+                            <h5>RWF 2000 / Kg</h5>
                         </div>
                     </div>
                 </div>
+
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/french-beef-bologna.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/beef-bologna.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/beef-bologna.html">French-Beef-Bologna</a></h6>
+                            <h5>RWF 9800 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
+
+                             <!-- Beef Fillet Uncleaned -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/beef-fillet-uncleaned.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/beef-fillet-uncleaned.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                    </a>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/beef-fillet-uncleaned.html">Beef Fillet UnCleaned</a></h6>
+                            <h5>RWF 14200 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/satay.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/satay.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/satay.html">Marinated Chicken Satay</a></h6>
+                            <h5>RWF 6500 / 10PCs Per Pack</h5>
+                        </div>
+                    </div>
+                </div>                
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/sous.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/sous.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/sous.html">Marinated Sous vide chicken meat</a></h6>
+                            <h5>RWF 5500 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
                  <!-- Fresh Chicken Sausages -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/chicken.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/chicken-sausage.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./sausages/fresh-chicken-sausages.html"><i class="fa fa-shopping-cart"></i></a></li>
@@ -341,25 +712,10 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="./sausages/fresh-chicken-sausages.html">Fresh Chicken Sausages</a></h6>
-                            <h5>RWF 5200 / Kg</h5>
+                            <h5>RWF 9800 / Kg</h5>
                         </div>
                     </div>
                  </div>
-                    <!-- English Style Collar Bacon -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/c-bacon.png">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./charcuterie/collar-bacon.html"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./charcuterie/collar-bacon.html">English Style Collar Bacon</a></h6>
-                            <h5>RWF 10400 / Kg</h5>
-                        </div>
-                    </div>
-                </div>  
 
                 <!-- Beef Steak -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
@@ -375,12 +731,28 @@
                             <h5>RWF 6000 / Kg</h5>
                         </div>
                     </div>
+                </div>                
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/stirfry.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/stirfry.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/stirfry.html">Premium Stirfry Chicken </a></h6>
+                            <h5>RWF 9600 / Kg</h5>
+                        </div>
+                    </div>
                 </div>
+
             
                 <!-- Fresh Mutton Sausage -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/mutton.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/mutton.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./sausages/fresh-mutton-sausages.html"><i class="fa fa-shopping-cart"></i></a></li>
@@ -388,10 +760,59 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="./sausages/fresh-mutton-sausages.html">Fresh Mutton Sausage</a></h6>
-                            <h5>RWF 6200 / Kg</h5>
+                            <h5>RWF 10500 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/roulade.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/roulade.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/roulade.html">Raw Ready Chicken Roulade 500grms </a></h6>
+                            <h5>RWF 7300 / per pack</h5>
                         </div>
                     </div>
                 </div>
+
+
+                <!-- Fresh Beef Chipolatas -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/beef-chipolatas.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./sausages/beef-chipolatas.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./sausages/beef-chipolatas.html">Beef Chipolatas</a></h6>
+                            <h5>RWF 8500 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/sous-breast.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/sous-breast.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/sous-breast.html">Sous Vide Packed Chicken Meat </a></h6>
+                            <h5>RWF 4500 / 2PCs per pack</h5>
+                        </div>
+                    </div>
+                </div>
+
+                
                 
                 <!-- Chicken Burger -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
@@ -407,23 +828,137 @@
                             <h5>RWF 650 / 100g</h5>
                         </div>
                     </div>
+                </div>                                <!-- Fresh Chicken Chipolatas -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/chicken-chipolata.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./sausages/chicken-chipolatas.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./sausages/chicken-chipolatas.html">Chicken Chipolatas</a></h6>
+                            <h5>RWF 10600 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/spring-chicken.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/spring-chicken.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/spring-chicken.html">Spring Chicken </a></h6>
+                            <h5>RWF 5200 / Kg</h5>
+                        </div>
+                    </div>
                 </div>
+
+
+                
                 
                 <!-- Sirloin -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sirloin.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sirloin.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./beef/sirloin.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./beef/sirloin.html">Sirloin</a></h6>
-                            <h5>RWF 4000 / Kg</h5>
+                            <h6><a href="./beef/sirloin.html">Beef Sirloin Steak</a></h6>
+                            <h5>RWF 9700 / Kg</h5>
+                        </div>
+                    </div>
+                </div>               
+                 <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/stewing.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/stewing.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/stewing.html">Stewing Chicken </a></h6>
+                            <h5>RWF 9200 / Kg</h5>
                         </div>
                     </div>
                 </div>
+
+                                <!--Premium Roast -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/roast.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/roast.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/roast.html">Premium Roast</a></h6>
+                            <h5>RWF 8000 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                  
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix chicken">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chicken/capons.png">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./chicken/capons.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./chicken/capons.html">Whole Capons Per Kg</a></h6>
+                            <h5>RWF 5000 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                               
+                 <!--Marinated Beef Satay-->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/satay.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/satay.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/satay.html">Marinated Beef Satay</a></h6>
+                            <h5>RWF 4800 / 10pcs Per Pack</h5>
+                        </div>
+                    </div>
+                </div>                  
+                
+
+
+
+
+                   <!--Premium Roast -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/rump-roast.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/rump-roast.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/rump-roast.html">Primal Rump Roast</a></h6>
+                            <h5>RWF 9100 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
+
+
                 <!-- Ham Sausages -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
                     <div class="featured__item">
@@ -440,18 +975,18 @@
                     </div>
                 </div>
 
-                                <!-- Pork Mortadella Paprika -->
+                                <!--  Regular Borewors-->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/paprika.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/borewors.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./sausages/paprika.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./sausages/borewors.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./sausages/paprika.html">Pork Mortadella Paprika</a></h6>
-                            <h5>RWF 4600 / Kg</h5>
+                            <h6><a href="./sausages/borewors.html"> Borewors</a></h6>
+                            <h5>RWF 9100 / Kg</h5>
                         </div>
                     </div>
                 </div>
@@ -472,10 +1007,10 @@
                     </div>
                 </div>
 
-                                <!-- Pork Loin -->
+                                <!-- Pork Loin Bone in Whole (Rinds In) -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/loin.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/loin.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
 
@@ -484,11 +1019,28 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./pork/pork-loin.html">Pork Loin</a></h6>
-                            <h5>RWF 4500 / Kg</h5>
+                            <h6><a href="./pork/pork-loin.html">Pork Loin Bone in Whole (Rinds In)</a></h6>
+                            <h5>RWF 8400 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                                <!-- Pork Loin Bone in Whole -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/pork-loin.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+
+
+                                <li><a href="./pork/pork-loin-bonein.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./pork/pork-loinbonein.html">Pork Loin Bone in Whole</a></h6>
+                            <h5>RWF 8200 / Kg</h5>
                         </div>
                     </div>
                 </div>
+
                 <!-- Hamburger -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
                     <div class="featured__item">
@@ -508,7 +1060,7 @@
                 <!-- Liver Pate -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/liver-pate.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/liver-pate.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./charcuterie/liver-pate.html"><i class="fa fa-shopping-cart"></i></a></li>
@@ -516,62 +1068,105 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="./charcuterie/liver-pate.html">Liver Pate</a></h6>
-                            <h5>RWF 5500 / Kg</h5>
+                            <h5>RWF 9200 / Kg</h5>
                         </div>
                     </div>
                 </div>
-                <!-- Pork Mortadella -->
+                <!-- Regular Borewors(Pork Free)-->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/mort-pork.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/pork-free-borewors.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./sausages/pork-mortadella.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./sausages/borewors-pork-free.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./sausages/pork-mortadella.html">Pork Mortadella</a></h6>
-                            <h5>RWF 4600 / Kg</h5>
+                            <h6><a href="./sausages/borewors-pork-free.html">Regular Borewors(Pork Free)</a></h6>
+                            <h5>RWF 8500 / Kg</h5>
                         </div>
                     </div>
-                </div>          
+                </div>   
+                                <!-- Pork Mortadella -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/pork-mortadella.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/pork-mortadella.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/pork-mortadella.html">Pork Mortadella</a></h6>
+                            <h5>RWF 9800 / Kg</h5>
+                        </div>
+                    </div>
+                </div>         
+                       <!-- Cheese Smoked-->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/cheese-smoked.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./sausages/cheese-smoked.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./sausages/cheese-smoked.html">Cheese- Smoked Pork Grillers</a></h6>
+                            <h5>RWF 9700 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                   
+       
                 <!-- Strip Loin -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/strip-loin.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/strip-loin.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./beef/strip-loin.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./beef/strip-loin.html">Strip Loin</a></h6>
-                            <h5>RWF 6000 / Kg</h5>
+                            <h6><a href="./beef/strip-loin.html">Beef Strip Loin</a></h6>
+                            <h5>RWF 10400 / Kg</h5>
                         </div>
                     </div>
                 </div>
 
-                                <!-- Pork Shoulder / Arm of Pork -->
+                                <!-- Pork Shoulder Chops -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/shoulder.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/shoulder-chops.png">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./pork/pork-shoulder.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./pork/pork-shoulder.html">Pork Shoulder / Arm of Pork</a></h6>
-                            <h5>RWF 3600 / Kg</h5>
+                            <h6><a href="./pork/pork-shoulder.html">Pork Shoulder Chops</a></h6>
+                            <h5>RWF 7800 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                                <!-- Pork Shoulder Ribs -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/shoulder-ribs.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./pork/shoulder-ribs.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./pork/shoulder-ribs.html">Pork Shoulder Ribs</a></h6>
+                            <h5>RWF 8100 / Kg</h5>
                         </div>
                     </div>
                 </div>
-
-            
                 <!-- T-Bone Steak -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/t-bone.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/tbone.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./beef/tbone-steak.html"><i class="fa fa-shopping-cart"></i></a></li>
@@ -579,95 +1174,278 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="./beef/tbone-steak.html">T-Bone Steak</a></h6>
-                            <h5>RWF 6000 / Kg</h5>
+                            <h5>RWF 12300 / Kg</h5>
                         </div>
                     </div>
-                </div>
-                                <!-- Chicken Mortadella -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
+                </div>                                <!-- Beef Mortadella -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/chicken-mortadella.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/beef-mortadella.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./sausages/chicken-mortadella.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./charcuterie/beef-mortadella.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./sausages/chicken-mortadella.html">Chicken Mortadella</a></h6>
-                            <h5>RWF 7500 / Kg</h5>
+                            <h6><a href="./charcuterie/beef-mortadella.html">Beef Mortadella</a></h6>
+                            <h5>RWF 10000 / Kg</h5>
+                        </div>
+                    </div>
+                </div>    
+              <!-- Sweet Pepper Polony-->
+              <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/shoulder-ribs.jpg">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="./pork/shoulder-ribs.html"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="./pork/shoulder-ribs.html">Pork Shoulder Ribs</a></h6>
+                        <h5>RWF 3600 / Kg</h5>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/smoked-shanks.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./pork/smoked-shanks.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./pork/smoked-shanks.html">Pork Smoked Shanks</a></h6>
+                            <h5>RWF 8100 / Kg</h5>
+                        </div>
+                    </div>
+                </div>              <!-- Sweet Pepper Polony-->
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/smoked-kasslerless.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/smoked-kasslerless.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/smoked-kasslerless.html">Smoked Kassler (Pork LBoneless)</a></h6>
+                            <h5>RWF 11800 / Kg</h5>
+                        </div>
+                    </div>
+                </div>              <!-- Smoked Kassler-->
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/smoked-kassler.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/smoked-kassler.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/smoked-kassler.html">Smoked Kassler (Pork LBone-in)</a></h6>
+                            <h5>RWF 11500 / Kg</h5>
                         </div>
                     </div>
                 </div>
+                
+                                <!-- Chicken Mortadella -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/chicken-mortadella.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/chicken-mortadella.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/chicken-mortadella.html">Chicken Mortadella</a></h6>
+                            <h5>RWF 12000 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                 
+                 <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/pepper-polony.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/sweet-pepper-polony.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/sweet-pepper-polony.html">Sweet Pepper Polony (Bulk)</a></h6>
+                            <h5>RWF 10300 / Kg</h5>
+                        </div>
+                    </div>
+                </div>      
+             
+                 <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/t-bone-chops.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./pork/t-bone-chops.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./pork/t-bone-chops.html">Pork T Bone Chops</a></h6>
+                            <h5>RWF 9600 / Kg</h5>
+                        </div>
+                    </div>
+                </div>              <!-- Sweet Pepper Polony-->
+              
+                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/smoked-beef.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/smoked-beef.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/smoked-beef.html">Smoked Beef</a></h6>
+                            <h5>RWF 8700 / Kg</h5>
+                        </div>
+                    </div>
+                </div>      
+                          <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/pork-ham.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/spork-ham.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/spork-ham.html">Sandwich Pork Ham </a></h6>
+                            <h5>RWF 11900 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
+
                                 <!-- Hunter sausages -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/hunter.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/coktail.png">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./sausages/hunter-sausages.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./sausages/cocktail-sausages.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./sausages/hunter-sausages.html">Hunter sausages</a></h6>
-                            <h5>RWF 4800 / Kg</h5>
+                            <h6><a href="./sausages/cocktail-sausages.html">Cocktail sausage</a></h6>
+                            <h5>RWF 9400 / Kg</h5>
                         </div>
                     </div>
                 </div><!-- Smoked Gammon Ham -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/sgammon-ham.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/gammon-ham.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./charcuterie/sgammon-ham.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./charcuterie/sgammon-ham.html">Smoked Gammon Ham</a></h6>
+                            <h6><a href="./charcuterie/sgammon-ham.html">Premium Gammon Ham</a></h6>
                             <h5>RWF 8000 / Kg</h5>
                         </div>
                     </div>
-                </div><!-- Bacon -->
+                </div>
+                <!-- Bacon -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/bacon.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/beef-bacon.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./charcuterie/bacon.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./charcuterie/bacon.html">Bacon</a></h6>
-                            <h5>RWF 6500 / Kg</h5>
+                            <h6><a href="./charcuterie/bacon.html">Beef Bacon</a></h6>
+                            <h5>RWF 8200 / 500grms </h5>
                         </div>
                     </div>
-                </div>                    
-                <!-- Frankfurters/Hot dogs -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
+                </div>                   
+                <!-- Streaky Bacon -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/hot-dog.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/streaky-bacon.png">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./sausages/hot-dogs.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./charcuterie/streaky-bacon.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./sausages/hot-dogs.html">Frankfurters/Hot dogs</a></h6>
-                            <h5>RWF 4800 / Kg</h5>
+                            <h6><a href="./charcuterie/streaky-bacon.html">Smoked Streaky Bacon</a></h6>
+                            <h5>RWF 12400 / kg </h5>
+                        </div>
+                    </div>
+                </div>                
+ 
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/back-bacon.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/back-bacon.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/back-bacon.html">Pork Back Bacon</a></h6>
+                            <h5>RWF 11000 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                  
+                  <!-- Sandwich Beef Ham -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/beef-ham.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/beef-ham.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/beef-ham.html">Sandwich Beef Ham</a></h6>
+                            <h5>RWF 12600 / Kg</h5>
+                        </div>
+                    </div>
+                </div><!-- -->
+                  
+                <!-- Frankfurters/Hot dogs -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/frunkfurters.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/franfurters.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/franfurters.html">Frankfurters/Hot dogs</a></h6>
+                            <h5>RWF 11000 / Kg</h5>
                         </div>
                     </div>
                 </div>
-                <!-- White Bratwurst -->
+                <!-- Classic Bratwurst -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/bratwurst.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/classic-bratwurst.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./sausages/white-bratwurst.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./sausages/white-bratwurst.html">White Bratwurst</a></h6>
-                            <h5>RWF 4800 / Kg</h5>
+                            <h6><a href="./sausages/white-bratwurst.html">Classic Bratwurst</a></h6>
+                            <h5>RWF 9000 / Kg</h5>
                         </div>
                     </div>
                 </div>
@@ -677,63 +1455,63 @@
                         <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/mort-paris.png">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./sausages/mortadellaporcparis.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./sausages/smoked-pork.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./sausages/mortadellaporcparis.html">Pork Mortadella Paris	
+                            <h6><a href="./sausages/smoked-pork.html">Smoked- Pork Sausage	
                             </a></h6>
-                            <h5>RWF 4800 / Kg</h5>
+                            <h5>RWF 8700 / Kg</h5>
                         </div>
                     </div>
                 </div>
-                                <!-- Pork Belly -->
+                                <!-- Pork Belly Boneless Rind -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/belly.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/belly.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./pork/pork-belly.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./pork/pork-belly.html">Pork Belly</a></h6>
-                            <h5>RWF 3800 / Kg</h5>
+                            <h6><a href="./pork/pork-belly.html">Pork Belly Boneless Rind On</a></h6>
+                            <h5>RWF 8700 / Kg</h5>
                         </div>
                     </div>
                 </div><!-- Cooked Gammon Ham -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/cgammon-ham.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/cooked-ham.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./charcuterie/gammon-ham.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./charcuterie/gammon-ham.html">Cooked Gammon Ham</a></h6>
-                            <h5>RWF 5200 / Kg</h5>
+                            <h6><a href="./charcuterie/gammon-ham.html">Cooked Ham</a></h6>
+                            <h5>RWF 13000 / Kg</h5>
                         </div>
                     </div>
                 </div>
                                             <!-- Pork Loin Chops -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/loin-chops.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/pork-loin-chops.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./pork/pork-loin-chops.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./pork/bone-in.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./pork/pork-loin-chops.html">Pork Loin Chops</a></h6>
-                            <h5>RWF 4600 / Kg</h5>
+                            <h6><a href="./pork/bone-in.html">Pork Loin Chops Bone In</a></h6>
+                            <h5>RWF 8300 / Kg</h5>
                         </div>
                     </div>
                 </div><!-- Cooked Chicken Ham -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/chicken-ham.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/chicken-ham.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./charcuterie/chicken-ham.html"><i class="fa fa-shopping-cart"></i></a></li>
@@ -741,105 +1519,135 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="./charcuterie/chicken-ham.html">Cooked Chicken Ham</a></h6>
-                            <h5>RWF 7500 / Kg</h5>
+                            <h5>RWF 14300 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                                <!-- Pork Belly Boneless Rind -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/pork-ham.avif">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./pork/pork-ham.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./pork/pork-ham.html">Premium Pork Ham Roasts Skin Off</a></h6>
+                            <h5>RWF 8600 / Kg</h5>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/ebb-sausages.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/porterhouse.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./charcuterie/ebb-sausages.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./beef/potehouse.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./charcuterie/ebb-sausages.html"></a>English Breakfast Beef Sausages	</h6>
-                            <h5>RWF 5200 / Kg</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/ebp-sausages.png">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./charcuterie/ebp-sausages.html"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./charcuterie/ebp-sausages.html"></a>English Breakfast Pork Sausages</h6>
-                            <h5>RWF 5200 / Kg</h5>
+                            <h6><a href="./beef/potehouse.html">Porterhouse Steak</a></h6>
+                            <h5>RWF 12900 / Kg</h5>
                         </div>
                     </div>
                 </div>
 
                 
-                <!-- Chipolata/Cocktail Sausages -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/coktail.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/rib-roast.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./charcuterie/fresh-cocktail.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./beef/rib-roast.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./charcuterie/fresh-cocktail.html">Fresh	Cocktail/Chipolata	
-                                Sausages;	Pork	or	Beef	</a></h6>
-                            <h5>RWF 4600 / Kg</h5>
+                            <h6><a href="./beef/rib-roast.html">Prime Rib Roast</a></h6>
+                            <h5>RWF 9500 / Kg</h5>
                         </div>
                     </div>
                 </div>
-            <!-- Salami -->
+               <!-- Pork Chipolatas -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/salami.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/pork-chipolatas.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./sausages/salami.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./charcuterie/chipolata-pork.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./sausages/salami.html">Salami</a></h6>
-                            <h5>RWF 7500 / Kg</h5>
+                            <h6><a href="./charcuterie/chipolata-pork.html">Pork Chipolatas</a></h6>
+                            <h5>RWF 8500 / Kg</h5>
+                        </div>
+                    </div>
+                </div>              
+                 <!-- Catering Pork Sausages -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/pork-chipolatas.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/catering-sausages.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/catering-sausages.html">Catering Pork Sausages</a></h6>
+                            <h5>RWF 8900 / Kg</h5>
                         </div>
                     </div>
                 </div>
+
+
+
+            <!-- Pork Salami -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix cahrcuterie">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/pork-salami.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/pork-salami.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/pork-salami.html">Pork Salami</a></h6>
+                            <h5>RWF 12500 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
+                            <!-- Slow fermented Smoked Pepperoni -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/smoked-pepperoni.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./sausages/slow-fermentedpepperoni.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./sausages/slow-fermentedpepperoni.html">Slow fermented Smoked Pepperoni</a></h6>
+                            <h5>RWF 9800 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
+
             
-                <!-- Cubed Beef -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/cubed-beef.jpg">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/stewing-beef.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./beef/cubed-beef.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./beef/stewing-beef.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./beef/cubed-beef.html">Cubed Beef</a></h6>
-                            <h5>RWF 4200 / Kg</h5>
+                            <h6><a href="./beef/stewing-beef.html">Stewing Beef</a></h6>
+                            <h5>RWF 9000 / Kg</h5>
                         </div>
                     </div>
                 </div>
-            
-                <!-- Beef Carbonade -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/carbonade.png">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./beef/carbonade.html"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./beef/beef-carbonade.html">Beef Carbonade</a></h6>
-                            <h5>RWF 4100 / Kg</h5>
-                        </div>
-                    </div>
-                </div>
-            
                 <!-- Beef Shoulder -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
@@ -850,12 +1658,11 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./beef/beef-shoulder.html">Beef Shoulder</a></h6>
-                            <h5>RWF 3400 / Kg</h5>
+                            <h6><a href="./beef/beef-shoulder.html">Beef Shoulder Blade</a></h6>
+                            <h5>RWF 7500 / Kg</h5>
                         </div>
                     </div>
                 </div>
-
                                 <!-- Pork Strip -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
                     <div class="featured__item">
@@ -870,27 +1677,27 @@
                             <h5>RWF 5500 / Kg</h5>
                         </div>
                     </div>
-                </div>      
+                </div>   
+
                 <!-- Brisket -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/brisket.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/brisket.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./beef/brisket.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./beef/brisket.html">Brisket</a></h6>
-                            <h5>RWF 2700 / Kg</h5>
+                            <h6><a href="./beef/brisket.html">Brisket Flat Cut Roast</a></h6>
+                            <h5>RWF 8200 / Kg</h5>
                         </div>
                     </div>
                 </div>
-            
                 <!-- Rump Steak -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/ribs.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/ribs.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./beef/beef-short-ribs.html"><i class="fa fa-shopping-cart"></i></a></li>
@@ -899,28 +1706,26 @@
                         <div class="featured__item__text">
                             <h6><a href="./beef/beef-short-ribs.html">Beef short ribs
                             </a></h6>
-                            <h5>RWF 4000 / Kg</h5>
+                            <h5>RWF 6500 / Kg</h5>
                         </div>
                     </div>
                 </div>
-
-                <!-- Pork Neck (Without Fat and Bone) -->
+                <!-- Pork Neck Roast (Without Fat and Bone) -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/neck.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/neck-roast.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./pork/porkneck.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./pork/porkneck.html">Pork Neck (Without Fat and Bone)</a></h6>
-                            <h5>RWF 3850 / Kg</h5>
+                            <h6><a href="./pork/porkneck.html">Pork Neck Roast</a></h6>
+                            <h5>RWF 9700 / Kg</h5>
                         </div>
                     </div>
                 </div>
-            
-                <!-- Beef Mince-->
+                <!-- Regular Beef Mince-->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="img/featured/mince.jpg">
@@ -930,89 +1735,100 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./beef/beef-mince.html">Beef mince</a></h6>
-                            <h5>RWF 3000 / Kg</h5>
+                            <h6><a href="./beef/beef-mince.html">Regular Mince Beef</a></h6>
+                            <h5>RWF 7000 / Kg</h5>
                         </div>
                     </div>
                 </div>
-                <!-- Pork Rack -->
+                <!-- Pork Rack Spare Ribs -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/rack.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/pork-rack.png">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./pork/porkrack.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./pork/porkrack.html">Pork Rack</a></h6>
-                            <h5>RWF 4000 / Kg</h5>
+                            <h6><a href="./pork/porkrack.html">Pork Rack Spare Ribs</a></h6>
+                            <h5>RWF 8800 / Kg</h5>
                         </div>
                     </div>
                 </div>
-
-            <!--  Pure	beef	mince-->
-                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pure-mince.jpg">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./beef/pure-beef-mince.html"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./beef/pure-beef-mince.html">Pure Beef Mince</a></h6>
-                            <h5>RWF 4100 / Kg</h5>
-                        </div>
-                    </div>
-                </div>
-                                <!-- Pork Spare Ribs -->
+                                <!-- Baby back Pork Ribs -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/ribs.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/ribs.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./pork/porkspareribs.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./pork/porkspareribs.html">Pork Spare Ribs</a></h6>
-                            <h5>RWF 4500 / Kg</h5>
+                            <h6><a href="./pork/porkspareribs.html">Baby back Pork Ribs</a></h6>
+                            <h5>RWF 9600 / Kg</h5>
+                        </div>
+                    </div>
+                </div>  
+                          <!-- Rump Steak-->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/rump-steak.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/rump-steak.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/rump-steak.html">Rump Steak</a></h6>
+                            <h5>RWF 9400 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/ribeye.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/ribeye.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/ribeye.html">Prime Ribeye Steak</a></h6>
+                            <h5>RWF 9400 / Kg</h5>
                         </div>
                     </div>
                 </div>
-
                 <!-- Ossubucco -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/ossubucco.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/ossubucco.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./beef/ossubucco.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./beef/ossubucco.html">Ossubucco</a></h6>
-                            <h5>RWF 3200 / Kg</h5>
+                            <h6><a href="./beef/ossubucco.html">Ossubucco Shank Cross Cut</a></h6>
+                            <h5>RWF 7800 / Kg</h5>
                         </div>
                     </div>
                 </div>
                 <!-- Pork Mince -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/mince.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/mince.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./pork/pork-mince.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./pork/pork-mince.html">Pork Mince</a></h6>
-                            <h5>RWF 3150 / Kg</h5>
+                            <h6><a href="./pork/pork-mince.html">Pork Mince 60/40</a></h6>
+                            <h5>RWF 6800 / Kg</h5>
                         </div>
                     </div>
                 </div>
-
                     <!-- Liver -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
@@ -1027,36 +1843,34 @@
                             <h5>RWF 3500 / Kg</h5>
                         </div>
                     </div>
-                </div>
-                        <!-- Kidney -->
-
-                        <!-- Pork/Beef Mince -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
+                </div>                   
+                 <!-- Breast Lamb -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/pbeef-mince.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/breast-lamb.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./pork/porkbeefmince.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./lamb/breast-lamb.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./pork/porkbeefmince.html">Pork/Beef Mince</a></h6>
-                            <h5>RWF 3050 / Kg</h5>
+                            <h6><a href="./lamb/breast-lamb.html">Boned& Rolled Breast of Lamb</a></h6>
+                            <h5>RWF 9600 / Kg</h5>
                         </div>
                     </div>
-                </div>
-                <!-- English Style Cooked Gammon Ham -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                </div>                
+                 <!-- Canon Lamb -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/esc-gammon.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/canon-lamb.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./charcuterie/escgammon-ham.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="./lamb/canon-lamb.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./charcuterie/escgammon-ham.html">English Style Cooked Gammon Ham</a></h6>
-                            <h5>RWF 14400 / Kg</h5>
+                            <h6><a href="./lamb/canon-lamb.html">Canon of Lamb</a></h6>
+                            <h5>RWF 12800 / Kg</h5>
                         </div>
                     </div>
                 </div>
@@ -1075,7 +1889,21 @@
                         </div>
                     </div>
                 </div>
-
+                                 <!-- Cubed Boneless Lamb -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/cubed.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./lamb/cubed.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./lamb/cubed.html">Cubed Boneless Lamb</a></h6>
+                            <h5>RWF 10600 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
                     <!-- Pork Knuckle -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
                     <div class="featured__item">
@@ -1090,27 +1918,129 @@
                             <h5>RWF 2800 / Kg</h5>
                         </div>
                     </div>
+                </div>                                
+                 <!--Double Loin Rolled Boneless Lamb-->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/duble-loin.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./lamb/double-loin.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./lamb/double-loin.html">Double Loin Rolled Boneless Lamb</a></h6>
+                            <h5>RWF 12100 / Kg</h5>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Cooked Gammon Ham -->
+                <!-- Chicken Ham -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/chicken-ham.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/chicken-ham.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./charcuterie/chicken-ham.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./charcuterie/chicken-ham.html">Cooked Chicken Ham</a></h6>
+                            <h6><a href="./charcuterie/chicken-ham.html">Chicken Ham</a></h6>
                             <h5>RWF 7500 / Kg</h5>
                         </div>
                     </div>
+                </div>                   
+                <!--Lamb Front Shank-->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/front-shank.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./lamb/front-shank.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./lamb/front-shank.html">Lamb Front Shank</a></h6>
+                            <h5>RWF 9600 / Kg</h5>
+                        </div>
+                    </div>
+                </div>      
+                
+                <!-- beef Salami -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/beef-salami.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/beef-salami.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/beef-salami.html">Beef-Salami</a></h6>
+                            <h5>RWF 12900 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                  
+                <!--Lamb Kofters-->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/kofters.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./lamb/kofters.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./lamb/kofters.html">Lamb Kofters</a></h6>
+                            <h5>RWF 10200 / Kg</h5>
+                        </div>
+                    </div>
                 </div>
-           
-
-                                <!-- Heart -->
-
+                <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/beef-pastrami.avif">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./charcuterie/beef-pastrami.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./charcuterie/beef-pastrami.html">Beef-Pastrami</a></h6>
+                            <h5>RWF 10600 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                
+                <!--Lamb Leg Bone-in-->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/bone-in.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./lamb/bone-in.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./lamb/bone-in.html">Lamb Leg Bone-in</a></h6>
+                            <h5>RWF 9800 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                
+                <!--Lamb Leg Netted Roast-->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/netted-roast.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./lamb/netted-roast.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./lamb/netted-roast.html">Lamb Leg Netted Roast</a></h6>
+                            <h5>RWF 11000 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                               
+                <!-- Heart -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="img/featured/heart.png">
@@ -1124,80 +2054,256 @@
                             <h5>RWF 3500 / Kg</h5>
                         </div>
                     </div>
+                </div>                
+                <!--Lamb Loin Chops-->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/loin-chops.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./lamb/loin-chops.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./lamb/loin-chops.html">Lamb Loin Chops</a></h6>
+                            <h5>RWF 10000 / Kg</h5>
+                        </div>
+                    </div>
                 </div>
-
-                
-                                    <!-- Oxtail -->
-
+                <!-- Oxtail -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/oxtail.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/oxtail.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./beef/oxtail.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./beef/oxtail.html">Oxtail</a></h6>
-                            <h5>RWF 3500 / Kg</h5>
+                            <h6><a href="./beef/oxtail.html">Oxtail Sliced</a></h6>
+                            <h5>RWF 7500 / Kg</h5>
+                        </div>
+                    </div>
+                </div> 
+
+                 <!--Lamb Mince-->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/mince.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./lamb/mince.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./lamb/mince.html">Lamb Mince</a></h6>
+                            <h5>RWF 9500 / Kg</h5>
+                        </div>
+                    </div>
+                </div> 
+
+                <!--Lamb Neck Chops-->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/neck-chops.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./lamb/neck-chops.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./lamb/neck-chops.html">Lamb Neck Chops</a></h6>
+                            <h5>RWF 8000 / Kg</h5>
                         </div>
                     </div>
                 </div>
-                <!-- Bones -->
 
-                <!-- Pork Head -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/head.png">
-                        <ul class="featured__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="./pork/pork-head.html"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="./pork/pork-head.html">Pork Head</a></h6>
-                        <h5>RWF 3000 / Per Piece</h5>
-                    </div>
-                </div>
-            </div>
-
-
+                <!-- Round Roast -->                
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/beef-bones.png">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/round_roast.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/round-roast.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/round-roast.html">Top Round Roast</a></h6>
+                            <h5>RWF 8400 / Kg</h5>
+                        </div>
+                    </div>
+                </div>
+
+                 <!--Lamb Patties-->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/patties.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./lamb/paties.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./lamb/paties.html">Lamb Patties</a></h6>
+                            <h5>RWF 3500 / Kg</h5>
+                        </div>
+                    </div>
+                </div> 
+
+                 <!-- Chuck Eye -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/chuck-eye.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/chuck-eye.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/chuck-eye.html">Chuck Eye Steak</a></h6>
+                            <h5>RWF 9200 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                
+               <!-- Bones -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/soup-bones.webp">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="./beef/bones.html"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./beef/bones.html">Beef Bones</a></h6>
-                            <h5>RWF 300 / Kg</h5>
+                            <h6><a href="./beef/bones.html">Soup Bones (Beef)</a></h6>
+                            <h5>RWF 2200 / Kg</h5>
                         </div>
                     </div>
-                </div>
-
-                <!-- Pork Trotters -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
+                </div>                 
+                <!--Lamb Real Shank-->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/real-shank.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./lamb/real-shank.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./lamb/real-shank.html">Lamb Real Shank</a></h6>
+                            <h5>RWF 11900 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                 
+                <!-- Beef Fillet Proportioned 220g -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/fillet-proportioned.webp">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/fillet-proportioned.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/fillet-proportioned.html">Beef Fillet Proportioned 220g</a></h6>
+                            <h5>RWF 7000 / 2Pcs Per Pack</h5>
+                        </div>
+                    </div>
+                </div>                    
+                <!-- Chuck Eye -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/featured/silverside.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="./beef/silverside.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="./beef/silverside.html">Beef Silverside</a></h6>
+                            <h5>RWF 8000 / Kg</h5>
+                        </div>
+                    </div>
+                </div>                  
+             <!--Lamb Rib Chops-->
+            <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
                 <div class="featured__item">
-                    <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/trotters.png">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/rib-chops.webp">
                         <ul class="featured__item__pic__hover">
                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="./pork/pork-trotters.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a href="./lamb/rib-chops.html"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
                     </div>
                     <div class="featured__item__text">
-                        <h6><a href="./pork/pork-trotters.html">Pork Trotters</a></h6>
-                        <h5>RWF 300 / Per Piece</h5>
+                        <h6><a href="./lamb/rib-chops.html">Lamb Rib Chops</a></h6>
+                        <h5>RWF 11200 / Kg</h5>
                     </div>
                 </div>
-            </div><!-- Pate de Foie -->
-
-
+            </div>                  
+            <!-- Lean Minced -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/lean-minced.jpg">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="./beef/lean-minced.html"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="./beef/lean-minced.html">Lean Minced</a></h6>
+                        <h5>RWF 8600 / kg</h5>
+                    </div>
+                </div>
+            </div>                 
+             <!--Lamb Shoulder Chops-->
+            <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/shoulder-chops.webp">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="./lamb/shoulder-chops.html"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="./lamb/shoulder-chops.html">Lamb Shoulder Chops</a></h6>
+                        <h5>RWF 9300 / Kg</h5>
+                    </div>
+                </div>
+            </div>      
+             <!-- Fresh Frying Pork Bone in -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/pork-bone-in.webp">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="./pork/fresh-frying.html"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="./pork/fresh-frying.html">Fresh Frying Pork Bone in</a></h6>
+                        <h5>RWF 6100 / Kg</h5>
+                    </div>
+                </div>
+            </div>            
+             <!--Rack of Lamb-->
+            <div class="col-lg-3 col-md-4 col-sm-6 mix lamb">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/lamb/rack-lamb.jpg">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="./lamb/rack-lamb.html"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="./lamb/rack-lamb.html">Rack of Lamb</a></h6>
+                        <h5>RWF 12000 / Kg</h5>
+                    </div>
+                </div>
+            </div>
             <!-- Pork Bones -->
             <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
                 <div class="featured__item">
-                    <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/bones.png">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/pork/bones.jpg">
                         <ul class="featured__item__pic__hover">
                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
                             <li><a href="./pork/pork-bones.html"><i class="fa fa-shopping-cart"></i></a></li>
@@ -1205,30 +2311,33 @@
                     </div>
                     <div class="featured__item__text">
                         <h6><a href="./pork/pork-bones.html">Pork Bones</a></h6>
-                        <h5>RWF 1200 / Kg</h5>
+                        <h5>RWF 2000 / Kg</h5>
                     </div>
                 </div>
             </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/meatball.png">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./charcuterie/meatball.html"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./charcuterie/meatball.html">MeatBalls</a></h6>
-                            <h5>RWF 500 / 100g</h5>
-                        </div>
+            <!-- Boulette -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mix charcuterie">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/charc/meatball.png">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#" class="add-to-wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="./charcuterie/meatball.html"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="./charcuterie/meatball.html">MeatBalls</a></h6>
+                        <h5>RWF 2700 / 5pcs/Pack</h5>
                     </div>
                 </div>
-                <div class="pagination-controls">
-                    <button id="prev-button" class="pagination-button" disabled>Previous</button>
-                    <button id="next-button" class="pagination-button">Next</button>
-                </div>
             </div>
-            </section>
+            <div class="pagination-controls">
+                <button id="prev-button" class="pagination-button" disabled>Previous</button>
+                <button id="next-button" class="pagination-button">Next</button>
+            </div>
+        </div>
+    </div>  
+    </section>
+    <!-- Featured Section End -->
      
      <!-- Footer Section Begin -->
      <footer class="footer spad">
@@ -1295,118 +2404,156 @@
 
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const wishlistButtons = document.querySelectorAll('.add-to-wishlist');
+      
+          wishlistButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+              event.preventDefault();
+              const button = event.target; // Get the button element
+              const productItem = button.closest('.featured__item');
+                
+              // Extract product information
+              const productName = productItem.querySelector('h6 a').innerText;
+              const productPrice = productItem.querySelector('.featured__item__text h5').innerText;
+              const productImage = productItem.querySelector('.set-bg').dataset.setbg;
+      
+              const wishlistItem = {
+                name: productName,
+                price: productPrice,
+                image: productImage
+              };
+      
+              // Save to localStorage (you can replace this with your preferred method of saving data)
+              let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+              wishlist.push(wishlistItem);
+              localStorage.setItem('wishlist', JSON.stringify(wishlist));
+      
+              // Update UI to show item added to wishlist
+              const wishlistSpan = button.querySelector('span');
+              if (wishlistSpan) {
+                wishlistSpan.innerText = 'Added to Wishlist';
+              }      
+              // Display notification
+              alert('Item added to wishlist!');
+      
+              // Update wishlist table
+              updateWishlistTable();
+            });
+          });
+        });
+      
+        function updateWishlistTable() {
+          const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+          const wishlistTableBody = document.getElementById('wishlist-items');
+      
+          wishlistTableBody.innerHTML = '';
+      
+          wishlist.forEach(item => {
+            const tableRow = document.createElement('tr');
+            tableRow.innerHTML = `
+              <td class="shoping__product">
+                <img src="${item.image}" alt="${item.name}">
+                <h5>${item.name}</h5>
+              </td>
+              <td>${item.price}</td>
+              <td>
+                <button class="btn btn-danger">Remove</button>
+              </td>
+            `;
+            wishlistTableBody.appendChild(tableRow);
+          });
+        }
+      </script>    
+
+    <script>
+        function updateCartDisplay() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let totalQuantity = 0;
+            let totalPrice = 0;
+
+            cart.forEach(item => {
+                totalQuantity += parseInt(item.quantity, 10);
+                totalPrice += item.price * item.quantity;
+            });
+
+            document.querySelectorAll('#cart-count').forEach(el => el.innerText = totalQuantity);
+            document.querySelectorAll('#cart-price').forEach(el => el.innerText = `RWF ${totalPrice.toLocaleString()}`);
+        }
+
+        document.addEventListener('DOMContentLoaded', updateCartDisplay);
+    </script>
+
+
+
+
+    <script>
         document.addEventListener("DOMContentLoaded", function() {
             const productsPerPage = 12;
             let currentPage = 1;
-    
-            const products = document.querySelectorAll('.featured__item');
-            const totalPages = Math.ceil(products.length / productsPerPage);
-    
-            function showPage(page) {
-                products.forEach((product, index) => {
-                    product.style.display = (index >= (page - 1) * productsPerPage && index < page * productsPerPage) ? 'block' : 'none';
+        
+            const allProducts = document.querySelectorAll('.featured__item');
+            const tabButtons = document.querySelectorAll('.tab-button');
+            
+            // Function to filter products by category
+            function filterProducts(category) {
+                allProducts.forEach(product => {
+                    const categories = product.classList;
+                    if (categories.contains(category) || category === 'all') {
+                        product.parentElement.style.display = 'block'; // Show the parent div (.col-*)
+                    } else {
+                        product.parentElement.style.display = 'none'; // Hide the parent div (.col-*)
+                    }
                 });
-    
+                showPage(1); // Reset to the first page after filtering
+            }
+        
+            // Add event listeners to tab buttons
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.dataset.filter === '*' ? 'all' : this.dataset.filter.slice(1);
+                    filterProducts(category);
+                });
+            });
+        
+            // Pagination function
+            function showPage(page) {
+                const visibleProducts = Array.from(allProducts).filter(product => product.parentElement.style.display !== 'none');
+                const totalPages = Math.ceil(visibleProducts.length / productsPerPage);
+        
+                visibleProducts.forEach((product, index) => {
+                    product.parentElement.style.display = (index >= (page - 1) * productsPerPage && index < page * productsPerPage) ? 'block' : 'none';
+                });
+        
                 document.getElementById('prev-button').disabled = page === 1;
                 document.getElementById('next-button').disabled = page === totalPages;
             }
-    
+        
+            // Next and Previous button event listeners
             document.getElementById('next-button').addEventListener('click', function() {
+                const totalPages = Math.ceil(Array.from(allProducts).filter(product => product.parentElement.style.display !== 'none').length / productsPerPage);
                 if (currentPage < totalPages) {
                     currentPage++;
                     showPage(currentPage);
                 }
             });
-    
+        
             document.getElementById('prev-button').addEventListener('click', function() {
                 if (currentPage > 1) {
                     currentPage--;
                     showPage(currentPage);
                 }
             });
-    
+        
             // Initialize the first page
             showPage(currentPage);
         });
+        
     </script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const productsPerPage = 12;
-            let currentPage = 1;
-    
-            const products = document.querySelectorAll('.featured__item');
-            const totalPages = Math.ceil(products.length / productsPerPage);
-    
-            function showPage(page) {
-                products.forEach((product, index) => {
-                    product.style.display = (index >= (page - 1) * productsPerPage && index < page * productsPerPage) ? 'block' : 'none';
-                });
-    
-                document.getElementById('prev-button').disabled = page === 1;
-                document.getElementById('next-button').disabled = page === totalPages;
-            }
-    
-            document.getElementById('next-button').addEventListener('click', function() {
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    showPage(currentPage);
-                }
-            });
-    
-            document.getElementById('prev-button').addEventListener('click', function() {
-                if (currentPage > 1) {
-                    currentPage--;
-                    showPage(currentPage);
-                }
-            });
-    
-            // Initialize the first page
-            showPage(currentPage);
-        });
-    </script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const notification = document.getElementById('notification');
-    
-            // Function to show notification
-            function showNotification(message) {
-                notification.textContent = message;
-                notification.classList.add('show');
-                setTimeout(() => {
-                    notification.classList.remove('show');
-                }, 3000); // Show notification for 3 seconds
-            }
-    
-            // Function to add product to wishlist
-            function addToWishlist(productId, productImage, productPrice) {
-                const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-                const product = { productId, productImage, productPrice };
-    
-                // Check if product is already in wishlist
-                if (!wishlist.some(item => item.productId === productId)) {
-                    wishlist.push(product);
-                    localStorage.setItem('wishlist', JSON.stringify(wishlist));
-                    showNotification('Successfully added to wishlist');
-                } else {
-                    showNotification('Product is already in the wishlist');
-                }
-            }
-    
-            // Add event listeners to heart icons on product pages
-            const heartIcons = document.querySelectorAll('.fa-heart');
-            heartIcons.forEach((icon) => {
-                icon.addEventListener('click', (e) => {
-                    e.preventDefault();  // Prevent default action to avoid navigation
-                    const productId = e.target.closest('.fa-heart').dataset.productId;
-                    const productImage = e.target.closest('.fa-heart').dataset.productImage;
-                    const productPrice = e.target.closest('.fa-heart').dataset.productPrice;
-                    addToWishlist(productId, productImage, productPrice);
-                });
-            });
-        });
-    </script>
+            
+
         
 
 

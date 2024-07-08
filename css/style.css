@@ -746,9 +746,134 @@ ol {
     margin-top: 20px;
 
 }
+/* Style the modal header */
+.modal-header {
+	justify-content: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Center align the logo */
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 100px; /* adjust the width to your liking */
+    height: 100px; /* adjust the height to your liking */
+}
+
+/* Style the modal title */
+.modal-title {
+    margin-top: 10px; /* add units to margin-top */
+    font-weight: bold;
+    color: #000000; /* white text on orange background */
+    text-align: center;
+}
+
+/* Style the login form */
+#login-form {
+    padding: 20px;
+}
+
+#login-form h4 {
+    margin-top: 0;
+    font-weight: bold;
+    color: #f4b02b; /* use the primary color for the heading */
+    display: flex;
+    justify-content: center; /* center align the heading */
+}
+
+#login-form h4 {
+    margin-top: 0;
+    font-weight: bold;
+    color: #f4b02b; /* use the primary color for the heading */
+}
+
+/* Style the sign up link */
+.mt-3 {
+    text-align: center;
+}        /* Styles for the Order Summary box */
+.checkout__order {
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}        
+.primary-color {
+	color: #f4b02b; /* Replace with your primary color */
+}
+
+.checkout__order h4 {
+	font-size: 18px;
+	font-weight: bold;
+}
+.checkout__order__products,
+.checkout__order__subtotal,
+.checkout__order__handling-fee,
+.checkout__order__total {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 0;
+}
+.checkout__order__products span,
+.checkout__order__subtotal span,
+.checkout__order__handling-fee span,
+.checkout__order__total span {
+	font-weight: bold;
+}
+ul#cart-items {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+ul#cart-items li {
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 0;
+}
+#featurs-content h5 {
+	font-weight: bold;
+    color: #f4b02b; /* use the primary color for the heading */
+
+
+}
+
+
+.mt-3 a {
+    color: #f4b02b; /* use the primary color for the link */
+    text-decoration: none;
+}
+
+.mt-3 a:hover {
+    color: #fff; /* white text on hover */
+    text-decoration: underline;
+}
+#signup-form h4 {
+    margin-top: 0;
+    font-weight: bold;
+    color: #f4b02b; /* use the primary color for the heading */
+    display: flex;
+    justify-content: center; /* center align the heading */
+}
+
+/* Style the buttons */
+.btn-primary {
+    background-color: #f4b02b;
+    border-color: #f4b02b;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #ffc107; /* darker orange on hover */
+    border-color: #ffc107;
+    color: #fff;
+}
+ .checkout__order__handling-fee {
+        padding-bottom: 10px; /* Add padding to separate it from the total */
+    }
+
 
 .pagination-button {
-    background-color: #f4b02b;;
+    background-color: #f4b02b;
     color: white;
     border: none;
     padding: 10px 20px;

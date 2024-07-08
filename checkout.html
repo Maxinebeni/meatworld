@@ -22,6 +22,12 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsOAuth/1.3.7/oauth.min.js"></script>
+
+
+
+
 </head>
 
 <body>
@@ -29,6 +35,56 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
+
+            <!-- Humberger Begin -->
+            <div class="humberger__menu__overlay"></div>
+            <div class="humberger__menu__wrapper">
+                <div class="humberger__menu__logo">
+                    <a href="./index.html"><img src="img/logo.png" width="170" height="100" alt=""></a>
+                </div>
+                <div class="humberger__menu__cart">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-heart"></i> <span id="wishlist-count">1</span></a></li>
+                        <li><a href="shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span id="cart-count">0</span></a></li>
+                    </ul>
+                    <div class="header__cart__price">item: <span id="cart-price">RWF 0</span></div>
+               </div>
+                <div class="humberger__menu__widget">
+                    <div class="header__top__right__auth">
+                        <a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i> Login</a>
+                    </div>
+                </div>
+                <nav class="humberger__menu__nav mobile-menu">
+                                <ul>
+                                    <li class="active"><a href="./index.html">Home</a></li>
+                                    <li><a href="./shop-details.html">Shop</a></li>
+                                    <li><a href="./shop-grid.html">About Us</a></li>
+                                     <li><a href="#">Quick Links</a>
+                                        <ul class="header__menu__dropdown">
+                                            <li><a href="mywishlist.html">My Wishlist</a></li>
+                                            <li><a href="./shoping-cart.html">My Shopping Cart</a></li>
+                                            <li><a href="./checkout.html">Check Out</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="./contact.html">Contact</a></li>
+                                    </ul>
+                </nav>
+                <div id="mobile-menu-wrap"></div>
+                <div class="header__top__right__social">
+                    <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    <a href="" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                                    <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                                    <a href="" target="_blank"><i class="fa fa-instagram"></i></a>
+                </div>
+                <div class="humberger__menu__contact">
+                    <ul>
+                        <li><i class="fa fa-envelope"></i> info@meatworld.rw</li>
+                        <li><i class="fa fa-phone"></i>+250 788 313 970 | +250 786 052 729</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Humberger End -->
+    
 
 
     <!-- Header Section Begin -->
@@ -88,11 +144,11 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span id="wishlist-count">1</span></a></li>
+                            <li><a href="shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span id="cart-count">0</span></a></li>
                         </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
-                    </div>
+                        <div class="header__cart__price">item: <span id="cart-price">RWF 0</span></div>                  
+                      </div>
                 </div>
             </div>
             <div class="humberger__open">
@@ -168,74 +224,121 @@
     </section>
     <!-- Breadcrumb Section End -->
 
-<!-- Checkout Section Begin -->
-<section class="checkout spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h6><span class="icon_tag_alt"></span> Have a coupon? <a href="./shopping-cart.html">Click here</a> to enter your code</h6>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-md-6">
-                <div class="checkout__form">
-                    <h4>Billing Details</h4>
-                    <form>
-                        <!-- Billing details fields -->
-                    </form>
+    <!-- Checkout Section Begin -->
+    <section class="checkout spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h6><span class="icon_tag_alt"></span> Have a coupon? <a href="./shoping-cart.html">Click here</a> to enter your code</h6>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
+            <div class="row">
+                <div class="col-lg-8 col-md-6">
+                    <div class="checkout__form">
+                        <h4 class="primary-color">Payment Details</h4>
+                        <div class="checkout__payment-method">
+                            <div class="checkout__input__checkbox">
+                                <label for="card">
+                                    Visa/Mastercard
+                                    <input type="radio" id="card" name="payment-method" value="card">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="checkout__input__checkbox">
+                                <label for="mobile-money">
+                                    Mobile Money
+                                    <input type="radio" id="mobile-money" name="payment-method" value="mobileMoney">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <br><br>
+
+                        <!-- Card Details Section (Hidden by default) -->
+                        <div class="checkout__payment-section card-details" style="display: none;">
+                            <h4>Card Details</h4>
+                            <div class="checkout__input">
+                                <p>Name on Card<span>*</span></p>
+                                <input type="text" name="card-name" placeholder="Enter your name on card">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Card Number<span>*</span></p>
+                                <input type="text" name="card-number" placeholder="Enter your card number">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Expiration Date<span>*</span></p>
+                                <input type="text" name="expiration-date" placeholder="Enter your expiration date">
+                            </div>
+                            <div class="checkout__input">
+                                <p>CVV<span>*</span></p>
+                                <input type="text" name="cvv" placeholder="Enter your CVV">
+                            </div>
+                        </div>
+
+                        <!-- Mobile Money Section (Hidden by default) -->
+                        <div class="checkout__payment-section mobile-money" style="display: none;">
+                            <h4>Mobile Money Details</h4>
+                            <div class="checkout__input">
+                                <p>Mobile Money Number<span>*</span></p>
+                                <input type="text" name="mobile-money-number" placeholder="Enter your mobile money number">
+                            </div>
+                            <p style="color: red;">* Only Airtel can be used for Mobile Money payments.</p>
+                        </div>
+                        <br><br>
+
+                        <!-- Billing Address -->
+                        <h4 class="primary-color">Billing Information</h4>
+                        <div class="checkout__input">
+                            <p>Address Line 1<span>*</span></p>
+                            <input type="text" name="address-line-1" placeholder="Enter your address line 1">
+                        </div>
+                        <div class="checkout__input">
+                            <p>City<span>*</span></p>
+                            <input type="text" name="city" placeholder="Enter your city">
+                        </div>
+                        <div class="checkout__input">
+                            <p>State<span>*</span></p>
+                            <input type="text" name="state" placeholder="Enter your state">
+                        </div>
+                        <div class="checkout__input">
+                            <p>Country<span>*</span></p>
+                            <input type="text" name="country" placeholder="Enter your country">
+                        </div>
+                        <!-- Place Order Button -->
+                        <button class="primary-btn" id="place-order">Place Order</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
                 <!-- Order Summary Section -->
-                <div class="checkout__order">
-                    <h4>Your Order</h4>
-                    <div class="checkout__order__products">Products <span>Total</span></div>
-                    <ul>
-                        <!-- Cart items will be dynamically inserted here -->
-                    </ul>
-                    <div class="checkout__order__subtotal">Subtotal <span>RWF 0.00</span></div>
-                    <div class="checkout__order__handling-fee">Handling Fee <span>RWF 0.00</span></div>
-                    <div class="checkout__order__total">Total <span>RWF 0.00</span></div>
+            <!-- Order Summary Section -->
+            <div class="checkout__order">
+                <h4 class="primary-color">Order Summary</h4>
+                <div class="checkout__order__products">Products <span id="total-products">0</span></div>
+                <ul id="cart-items">
+                    <!-- Cart items will be dynamically inserted here -->
+                </ul>
+                <div class="primary-line"></div>
+                <div class="checkout__order__subtotal">
+                    <span style="float: left;">Subtotal</span>
+                    <span id="subtotal" style="float: right;">RWF 0.00</span>
                 </div>
-
-                <!-- Payment Method Section -->
-                <div class="checkout__payment-method">
-                    <h4>Payment Method</h4>
-                    <div class="checkout__input__checkbox">
-                        <label for="card">
-                            Card
-                            <input type="radio" id="card" name="payment-method" value="card">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    <div class="checkout__input__checkbox">
-                        <label for="mobile-money">
-                            Mobile Money
-                            <input type="radio" id="mobile-money" name="payment-method" value="mobileMoney">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
+                <div class="checkout__order__handling-fee">
+                    <span style="float: left;"><b>Handling Fee</b></span>
+                    <span id="handling-fee" style="float: right;">RWF 0.00</span>
                 </div>
-
-                <!-- Card Details Section (Hidden by default) -->
-                <div class="checkout__payment-section card-details" style="display: none;">
-                    <h4>Card Details</h4>
-                    <!-- Add form fields for card details here -->
+                <div class="primary-line"></div>
+                <div class="primary-line"></div>
+                <div class="checkout__order__total">
+                    <span style="float: left;">Total</span>
+                    <span id="total" style="float: right;">RWF 0.00</span>
                 </div>
-
-                <!-- Mobile Money Section (Hidden by default) -->
-                <div class="checkout__payment-section mobile-money" style="display: none;">
-                    <h4>Mobile Money Details</h4>
-                    <div class="checkout__input">
-                        <p>Mobile Money Number<span>*</span></p>
-                        <input type="text" name="mobile-money-number" placeholder="Enter your mobile money number">
-                    </div>
-                </div>
+            </div>           
+         </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Checkout Section End -->
+    </section>
+    <!-- Checkout Section End -->
+
 
     <!-- Footer Section Begin -->
     <footer class="footer spad">
@@ -300,7 +403,25 @@
     <script src="js/ani.js"></script>
     <script src="js/main.js"></script>
 
-    <!-- Add this script to the end of your HTML body -->
+    <script>
+        function updateCartDisplay() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let totalQuantity = 0;
+            let totalPrice = 0;
+
+            cart.forEach(item => {
+                totalQuantity += parseInt(item.quantity, 10);
+                totalPrice += item.price * item.quantity;
+            });
+
+            document.querySelectorAll('#cart-count').forEach(el => el.innerText = totalQuantity);
+            document.querySelectorAll('#cart-price').forEach(el => el.innerText = `RWF ${totalPrice.toLocaleString()}`);
+        }
+
+        document.addEventListener('DOMContentLoaded', updateCartDisplay);
+    </script>
+
+
 <script>
     // Function to load cart items
     function loadCartItems() {
@@ -358,6 +479,52 @@
         });
     });
 </script>
+<script>
+
+// Function to load order summary on the checkout page
+function loadOrderSummary() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+    const subtotalContainer = document.getElementById('subtotal');
+    const handlingFeeContainer = document.getElementById('handling-fee');
+    const totalContainer = document.getElementById('total');
+    const totalProductsContainer = document.getElementById('total-products');
+    
+    const handlingFee = 2500;
+    let subtotal = 0;
+    let totalQuantity = 0;
+
+    // Clear existing order summary items
+    cartItemsContainer.innerHTML = '';
+
+    // Iterate through cart items and create order summary rows
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        totalQuantity += parseInt(item.quantity, 10);
+
+        const orderItemRow = document.createElement('li');
+        orderItemRow.innerHTML = `
+            ${item.name} x ${item.quantity}
+            <span>RWF ${(item.price * item.quantity).toLocaleString()}</span>
+        `;
+        cartItemsContainer.appendChild(orderItemRow);
+    });
+
+    const total = subtotal + handlingFee;
+
+    // Update order summary totals
+    subtotalContainer.innerText = `RWF ${subtotal.toLocaleString()}`;
+    handlingFeeContainer.innerText = `RWF ${handlingFee.toLocaleString()}`;
+    totalContainer.innerText = `RWF ${total.toLocaleString()}`;
+    totalProductsContainer.innerText = totalQuantity;
+}
+
+// Call loadOrderSummary on page load
+document.addEventListener('DOMContentLoaded', loadOrderSummary);
+</script>
+
+<script src="path/to/pesapal.js"></script>
 
 
 
