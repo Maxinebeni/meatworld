@@ -28,16 +28,16 @@
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             let totalQuantity = 0;
             let totalPrice = 0;
-    
+
             cart.forEach(item => {
                 totalQuantity += parseInt(item.quantity, 10);
                 totalPrice += item.price * item.quantity;
             });
-    
-            document.getElementById('cart-count').innerText = totalQuantity;
-            document.getElementById('cart-price').innerText = `RWF ${totalPrice.toLocaleString()}`;
+
+            document.querySelectorAll('#cart-count').forEach(el => el.innerText = totalQuantity);
+            document.querySelectorAll('#cart-price').forEach(el => el.innerText = `RWF ${totalPrice.toLocaleString()}`);
         }
-    
+
         document.addEventListener('DOMContentLoaded', updateCartDisplay);
     </script>
 

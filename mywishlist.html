@@ -249,7 +249,7 @@
                         <div class="hero__search__form">
                             <form action="#">
                                 <div class="hero__search__categories">
-                                    All Categories
+                                    All Products
                                     <span class="arrow_carrot-down"></span>
                                 </div>
                                 <input type="text" placeholder="What do yo u need?">
@@ -296,6 +296,7 @@
         </div>
     </div>
 </section>
+<!-- Wishlist Section End -->
 <!-- Wishlist Section End -->
     <br><br>
     <br><br>
@@ -391,37 +392,37 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', updateWishlistTable);
-      
+    
         function updateWishlistTable() {
-          const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-          const wishlistTableBody = document.getElementById('wishlist-items');
-      
-          wishlistTableBody.innerHTML = '';
-      
-          wishlist.forEach(item => {
-            const tableRow = document.createElement('tr');
-            tableRow.innerHTML = `
-              <td class="shoping__product">
-                <img src="${item.image}" alt="${item.name}">
-                <h5>${item.name}</h5>
-              </td>
-              <td>${item.price}</td>
-              <td>
-                <button class="btn btn-danger" onclick="removeFromWishlist('${item.name}')">Remove</button>
-              </td>
-            `;
-            wishlistTableBody.appendChild(tableRow);
-          });
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const wishlistTableBody = document.getElementById('wishlist-items');
+    
+            wishlistTableBody.innerHTML = '';
+    
+            wishlist.forEach(item => {
+                const tableRow = document.createElement('tr');
+                tableRow.innerHTML = `
+                    <td class="shoping__product">
+                        <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px;">
+                        <h5>${item.name}</h5>
+                    </td>
+                    <td>RWF ${item.price.toLocaleString()}</td>
+                    <td>
+                        <button class="btn btn-danger" onclick="removeFromWishlist('${item.name}')">Remove</button>
+                    </td>
+                `;
+                wishlistTableBody.appendChild(tableRow);
+            });
         }
-      
+    
         function removeFromWishlist(productName) {
-          const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-          const index = wishlist.findIndex(item => item.name === productName);
-          if (index!== -1) {
-            wishlist.splice(index, 1);
-            localStorage.setItem('wishlist', JSON.stringify(wishlist));
-            updateWishlistTable();
-          }
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const index = wishlist.findIndex(item => item.name === productName);
+            if (index !== -1) {
+                wishlist.splice(index, 1);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                updateWishlistTable();
+            }
         }
     </script>
 

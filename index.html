@@ -348,7 +348,7 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="img/featured/mix-cuts.jpg">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i><span class="add-to-wishlist">Add to Wishlist</span></a></li>
+                                <li><a href="#" onclick="addToWishlist(1)"><i class="fa fa-heart"></i><span class="add-to-wishlist">Add to Wishlist</span></a></li>
                                 <li><a href="./beef/mix-cuts.html"><i class="fa fa-shopping-cart"></i><span class="add-to-cart">Add to Cart</span></a></li>
                             </ul>
                                         </div>
@@ -1091,21 +1091,6 @@
                 </div>
 
 
-                <!-- Ham Sausages -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/sausages/ham.png">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="./sausages/ham-sausages.html"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./sausages/ham-sausages.html">Ham Sausages</a></h6>
-                            <h5>RWF 4800 / Kg</h5>
-                        </div>
-                    </div>
-                </div>
 
                                 <!--  Regular Borewors-->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix sausages">
@@ -2555,6 +2540,95 @@
 
         document.addEventListener('DOMContentLoaded', updateCartDisplay);
     </script>
+
+    <!-- Add to Wishlist functionality -->
+<script>
+// Function to add item to wishlist
+function addToWishlist(productId) {
+    // Get the wishlist from local storage
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    // Check if the product is already in the wishlist
+    let index = wishlist.findIndex(item => item.id === productId);
+    if (index === -1) {
+        // Add the product to the wishlist
+        let product = getProductById(productId);
+        if (product) {
+            wishlist.push({ id: product.id, name: product.name, price: product.price, quantity: 1 });
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+            // Show confirmation message
+            showConfirmationMessage('Product successfully added to wishlist');
+
+            // Update the wishlist items
+            updateWishlistItems();
+        }
+    } else {
+        // Product already in wishlist
+        showConfirmationMessage('Product is already in wishlist');
+    }
+}
+// Function to display confirmation message
+function showConfirmationMessage(message) {
+    // Create a div element for the message
+    const confirmationMsg = document.createElement('div');
+    confirmationMsg.classList.add('confirmation-message');
+    confirmationMsg.textContent = message;
+
+    // Append to body
+    document.body.appendChild(confirmationMsg);
+
+    // Remove message after 3 seconds
+    setTimeout(() => {
+        confirmationMsg.remove();
+    }, 3000);
+}
+
+// Function to update wishlist items
+function updateWishlistItems() {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    let wishlistItems = document.getElementById('wishlist-items');
+
+    if (wishlistItems) {
+        wishlistItems.innerHTML = '';
+        wishlist.forEach((item, index) => {
+            let row = document.createElement('tr');
+            row.innerHTML = `
+                <td class="shoping__cart__item">
+                    <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px;">
+                    <h5>${item.name}</h5>
+                </td>
+                <td class="shoping__cart__price">
+                    RWF ${item.price.toLocaleString()}
+                </td>
+                <td class="shoping__cart__item__close">
+                    <span class="icon_close" onclick="removeFromWishlist(${index})"></span>
+                </td>
+            `;
+            wishlistItems.appendChild(row);
+        });
+    }
+}
+
+    // Function to remove item from wishlist
+    function removeFromWishlist(index) {
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        wishlist.splice(index, 1);
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        updateWishlistItems();
+    }
+
+    // Function to get product by id
+    function getProductById(productId) {
+        // Replace this with your actual product data
+        let products = [
+            { id: 1, name: 'Mix Cuts Beef with Bone', price: 6100 },
+            { id: 2, name: 'Hot Smoked Sausages (Mixte Beef & Pork)', price: 9000 },
+            // ...
+        ];
+        return products.find(product => product.id === productId);
+    }
+</script>
 
 
     <script>

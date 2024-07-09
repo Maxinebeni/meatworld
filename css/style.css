@@ -1055,6 +1055,18 @@ ul#cart-items li {
     justify-content: center;
     margin-top: 20px;
 }
+.confirmation-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
 
 .pagination-button {
     background-color: #f4b02b;
@@ -1881,7 +1893,11 @@ ul#cart-items li {
 
 .product-details {
 	padding-top: 80px;
+	overflow: auto; /* Ensure overflow is set to auto or visible */
+	
+
 }
+
 
 .product__details__pic__item {
 	margin-bottom: 20px;
