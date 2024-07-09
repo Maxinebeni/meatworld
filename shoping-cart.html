@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -224,7 +226,6 @@
         </div>
 
 
-
     </header>
     <!-- Header Section End -->
 
@@ -435,90 +436,10 @@
     <script src="js/main.js"></script>
 
 
-
-    <script>
-
-// Function to load cart items
-function loadCart() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartItems = document.getElementById('cart-items');
-    const cartTotal = document.getElementById('cart-total');
-    const cartCount = document.getElementById('cart-count');
-    const cartPrice = document.getElementById('cart-price');
-    const handlingFee = 2500;
-    let total = 0;
-    let itemCount = 0;
-
-    cartItems.innerHTML = '';
-    cart.forEach((item, index) => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-        itemCount += parseInt(item.quantity);
-
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td class="shoping__cart__item">
-                <img src="${item.image}" alt="">
-                <h5>${item.name}</h5>
-            </td>
-            <td class="shoping__cart__price">
-                RWF ${item.price}
-            </td>
-            <td class="shoping__cart__quantity">
-                <div class="quantity">
-                    <div class="pro-qty">
-                        <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)">
-                    </div>
-                </div>
-            </td>
-            <td class="shoping__cart__total" id="item-total-${index}">
-                RWF ${itemTotal}
-            </td>
-            <td class="shoping__cart__item__close">
-                <span class="icon_close" onclick="removeFromCart(${index})"></span>
-            </td>
-        `;
-        cartItems.appendChild(row);
-    });
-
-    const grandTotal = total + handlingFee;
-
-    cartTotal.innerHTML = `
-        <li>Subtotal <span>RWF ${total.toLocaleString()}</span></li>
-        <li>Handling Fee <span>RWF ${handlingFee.toLocaleString()}</span></li>
-        <li>Total <span id="grand-total">RWF ${grandTotal.toLocaleString()}</span></li>
-    `;
-
-    cartCount.textContent = itemCount;
-    cartPrice.textContent = `RWF ${grandTotal.toLocaleString()}`;
-}
-
-// Function to remove item from cart
-function removeFromCart(index) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    loadCart();
-}
-
-// Function to update quantity
-function updateQuantity(index, quantity) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart[index].quantity = quantity;
-    localStorage.setItem('cart', JSON.stringify(cart));
-    loadCart();
-}
-
-// Load cart items when the window is loaded
-window.onload = loadCart;
-        </script>
-
-
-    
-    
+    <script type="module" src="shoping-cart.js"></script>
     
             <!-- Include the login script as a module -->
-        <script type="module" src="login-script.js"></script>
+    <script type="module" src="login-script.js"></script>
     
     
         

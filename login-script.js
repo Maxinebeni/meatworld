@@ -16,6 +16,32 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    
+    const greetingSection = document.getElementById('greetingSection');
+    const greetingText = document.getElementById('greetingText');
+
+    function updateGreetingMessage(user) {
+        const email = user.email;
+        const username = email.split('@')[0]; // Extract the first part of the email address
+        greetingText.innerHTML = `<h2>Hello, ${username}! Start shopping now!</h2>`;
+        greetingSection.style.display = 'block';
+    }
+
+    function hideGreetingMessage() {
+        greetingSection.style.display = 'none';
+    }
+
+    // Listen for authentication state changes
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            updateGreetingMessage(user);
+        } else {
+            hideGreetingMessage();
+        }
+    });
+
+
     // Handle toggling between modals
     document.getElementById('showSignupModal').addEventListener('click', function() {
         $('#loginModal').modal('hide');
