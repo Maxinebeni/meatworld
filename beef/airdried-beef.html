@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
-    <link rel="shortcut icon" href="img/fav.png">
+    <link rel="shortcut icon" href="../img/fav.png">
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -47,7 +47,57 @@
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
+    </div>        <!-- Humberger Begin -->
+    <div class="humberger__menu__overlay"></div>
+    <div class="humberger__menu__wrapper">
+        <div class="humberger__menu__logo">
+            <a href="./index.html"><img src="../img/logo.png" width="170" height="100" alt=""></a>
+        </div>
+        <br>
+
+        <div class="humberger__menu__cart">
+            <ul>
+                <li><a href="#"><i class="fa fa-heart"></i> <span id="wishlist-count">1</span></a></li>
+                <li><a href="shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span id="cart-count">0</span></a></li>
+            </ul>
+            <div class="header__cart__price">item: <span id="cart-price">RWF 0</span></div>
+       </div>
+        <div class="humberger__menu__widget">
+            <div class="header__top__right__auth">
+            </div>
+        </div>
+        <nav class="humberger__menu__nav mobile-menu">
+                        <ul>
+                            <li class="active"><a href="/ogani/index.html">Home</a></li>
+                            <li><a href="/ogani/shop-details.html">Shop</a></li>
+                            <li><a href="/ogani/shop-grid.html">About Us</a></li>
+                            <li>
+                                <a href="#">Quick Links</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="/ogani/mywishlist.html">My Wishlist</a></li>
+                                    <li><a href="/ogani/shoping-cart.html">My Shopping Cart</a></li>
+                                    <li><a href="/ogani/checkout.html">Check Out</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/ogani/contact.html">Contact</a></li>
+                        </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="header__top__right__social">
+            <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                            <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="" target="_blank"><i class="fa fa-instagram"></i></a>
+        </div>
+        <div class="humberger__menu__contact">
+            <ul>
+                <li><i class="fa fa-envelope"></i> info@meatworld.rw</li>
+                <li><i class="fa fa-phone"></i>+250 788 313 970 | +250 786 052 729</li>
+            </ul>
+        </div>
     </div>
+    <!-- Humberger End -->
+
 
 
     <!-- Header Section Begin -->
@@ -224,7 +274,8 @@
                             </div>
                         </div>
                         <button onclick="addToCart()" class="primary-btn">ADD TO CART</button>
-                        <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                       <button onclick="addToWishlist()" class="heart-icon" title="Thinking about it? Add to wishlist"><span class="icon_heart_alt"></span></button>
+
                         <ul>
                             <li><b>Availability</b> <span>In Stock</span></li>
                             <li><b>Delivery</b> <span>Delivery Available. <samp>Fresh Quality Guaranteed.</samp></span></li>
@@ -450,13 +501,36 @@
     <script src="../js/main.js"></script>
 
 
-    <script>
+    <script>        
+// Function to add item to wishlist
+function addToWishlist() {
+    const product = {
+        name: "Bresaolla Airdried Beef",
+        price: 12100,
+        url: window.location.href // The current page URL
+    };
+
+    let wishlistItems = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    // Check if the product is already in the wishlist
+    const isProductInWishlist = wishlistItems.some(item => item.name === product.name);
+
+    if (isProductInWishlist) {
+        alert('Product is already in the wishlist!');
+        return;
+    }
+
+    wishlistItems.push(product);
+    localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
+    
+    alert('Product added to wishlist!'); // Optional: Provide feedback to the user
+}
+            
         function addToCart() {
             const product = {
                 name: "Bresaolla Airdried Beef",
                 price: 12100,
                 quantity: document.getElementById('quantity').value,
-                image: "../img/product/details/product-details-2.jpg"
             };
     
             let cart = JSON.parse(localStorage.getItem('cart')) || [];

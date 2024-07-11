@@ -304,105 +304,124 @@
             <div class="row">
                 <div class="col-lg-8 col-md-6">
                     <div class="checkout__form">
-                        <h4 class="primary-color">Payment Details</h4>
-                        <div class="checkout__payment-method">
-                            <div class="checkout__input__checkbox">
-                                <label for="card">
-                                    Visa/Mastercard
-                                    <input type="radio" id="card" name="payment-method" value="card">
-                                    <span class="checkmark"></span>
-                                </label>
+                        <form action="pesapal.php" method="post">
+                            <h4 class="primary-color">Payment Details</h4>
+                            <div class="checkout__payment-method">
+                                <div class="checkout__input__checkbox">
+                                    <label for="card">
+                                        Visa/Mastercard
+                                        <input type="radio" id="card" name="payment-method" value="card" required>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="checkout__input__checkbox">
+                                    <label for="mobile-money">
+                                        Mobile Money
+                                        <input type="radio" id="mobile-money" name="payment-method" value="mobileMoney" required>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="checkout__input__checkbox">
-                                <label for="mobile-money">
-                                    Mobile Money
-                                    <input type="radio" id="mobile-money" name="payment-method" value="mobileMoney">
-                                    <span class="checkmark"></span>
-                                </label>
+                            <br><br>
+                        
+                            <!-- Card Details Section (Hidden by default) -->
+                            <div class="checkout__payment-section card-details" style="display: none;">
+                                <h4>Card Details</h4>
+                                <div class="checkout__input">
+                                    <p>Name on Card<span>*</span></p>
+                                    <input type="text" name="card-name" placeholder="Enter your name on card">
+                                </div>
+                                <div class="checkout__input">
+                                    <p>Card Number<span>*</span></p>
+                                    <input type="text" name="card-number" placeholder="Enter your card number">
+                                </div>
+                                <div class="checkout__input">
+                                    <p>Expiration Date<span>*</span></p>
+                                    <input type="text" name="expiration-date" placeholder="Enter your expiration date">
+                                </div>
+                                <div class="checkout__input">
+                                    <p>CVV<span>*</span></p>
+                                    <input type="text" name="cvv" placeholder="Enter your CVV">
+                                </div>
                             </div>
-                        </div>
-                        <br><br>
-
-                        <!-- Card Details Section (Hidden by default) -->
-                        <div class="checkout__payment-section card-details" style="display: none;">
-                            <h4>Card Details</h4>
+                        
+                            <!-- Mobile Money Section (Hidden by default) -->
+                            <div class="checkout__payment-section mobile-money" style="display: none;">
+                                <h4>Mobile Money Details</h4>
+                                <div class="checkout__input">
+                                    <p>Mobile Money Number<span>*</span></p>
+                                    <input type="text" name="mobile-money-number" placeholder="Enter your mobile money number">
+                                </div>
+                                <p style="color: red;">* Only Airtel can be used for Mobile Money payments.</p>
+                            </div>
+                            <br><br>
+                        
+                            <!-- Billing Information -->
+                            <h4 class="primary-color">Billing Information</h4>
                             <div class="checkout__input">
-                                <p>Name on Card<span>*</span></p>
-                                <input type="text" name="card-name" placeholder="Enter your name on card">
+                                <p>First Name<span>*</span></p>
+                                <input type="text" name="first-name" placeholder="Enter your first name" required>
                             </div>
                             <div class="checkout__input">
-                                <p>Card Number<span>*</span></p>
-                                <input type="text" name="card-number" placeholder="Enter your card number">
+                                <p>Last Name<span>*</span></p>
+                                <input type="text" name="last-name" placeholder="Enter your last name" required>
                             </div>
                             <div class="checkout__input">
-                                <p>Expiration Date<span>*</span></p>
-                                <input type="text" name="expiration-date" placeholder="Enter your expiration date">
+                                <p>Address Line 1<span>*</span></p>
+                                <input type="text" name="address-line-1" placeholder="Enter your address line 1" required>
                             </div>
                             <div class="checkout__input">
-                                <p>CVV<span>*</span></p>
-                                <input type="text" name="cvv" placeholder="Enter your CVV">
+                                <p>City<span>*</span></p>
+                                <input type="text" name="city" placeholder="Enter your city" required>
                             </div>
-                        </div>
-
-                        <!-- Mobile Money Section (Hidden by default) -->
-                        <div class="checkout__payment-section mobile-money" style="display: none;">
-                            <h4>Mobile Money Details</h4>
                             <div class="checkout__input">
-                                <p>Mobile Money Number<span>*</span></p>
-                                <input type="text" name="mobile-money-number" placeholder="Enter your mobile money number">
+                                <p>State<span>*</span></p>
+                                <input type="text" name="state" placeholder="Enter your state" required>
                             </div>
-                            <p style="color: red;">* Only Airtel can be used for Mobile Money payments.</p>
-                        </div>
-                        <br><br>
-
-                        <!-- Billing Address -->
-                        <h4 class="primary-color">Billing Information</h4>
-                        <div class="checkout__input">
-                            <p>Address Line 1<span>*</span></p>
-                            <input type="text" name="address-line-1" placeholder="Enter your address line 1">
-                        </div>
-                        <div class="checkout__input">
-                            <p>City<span>*</span></p>
-                            <input type="text" name="city" placeholder="Enter your city">
-                        </div>
-                        <div class="checkout__input">
-                            <p>State<span>*</span></p>
-                            <input type="text" name="state" placeholder="Enter your state">
-                        </div>
-                        <div class="checkout__input">
-                            <p>Country<span>*</span></p>
-                            <input type="text" name="country" placeholder="Enter your country">
-                        </div>
-                        <!-- Place Order Button -->
-                        <button class="primary-btn" id="place-order">Place Order</button>
+                            <div class="checkout__input">
+                                <p>Country<span>*</span></p>
+                                <input type="text" name="country" placeholder="Enter your country" required>
+                            </div>
+                            <div class="checkout__input">
+                                <p>Email<span>*</span></p>
+                                <input type="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="checkout__input">
+                                <p>Phone Number<span>*</span></p>
+                                <input type="tel" name="phone-number" placeholder="Enter your phone number" required>
+                            </div>
+                        
+                            <button class="primary-btn" type="submit">Place Order</button>
+                        </form>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                <!-- Order Summary Section -->
-            <!-- Order Summary Section -->
-            <div class="checkout__order">
-                <h4 class="primary-color">Order Summary</h4>
-                <div class="checkout__order__products">Products <span id="total-products">0</span></div>
-                <ul id="cart-items">
-                    <!-- Cart items will be dynamically inserted here -->
-                </ul>
-                <div class="primary-line"></div>
-                <div class="checkout__order__subtotal">
-                    <span style="float: left;">Subtotal</span>
-                    <span id="subtotal" style="float: right;">RWF 0.00</span>
+                    <!-- Order Summary Section -->
+                    <div class="checkout__order">
+                        <h4 class="primary-color">Order Summary</h4>
+                        <div class="checkout__order__products">Products <span id="total-products">0</span></div>
+                        <ul id="cart-items">
+                            <!-- Cart items will be dynamically inserted here -->
+                        </ul>
+                        <div class="primary-line"></div>
+                        <div class="checkout__order__subtotal">
+                            <span style="float: left;">Subtotal</span>
+                            <span id="subtotal" style="float: right;">RWF 0.00</span>
+                        </div>
+                        <div class="checkout__order__handling-fee">
+                            <span style="float: left;"><b>Handling Fee</b></span>
+                            <span id="handling-fee" style="float: right;">RWF 0.00</span>
+                        </div>
+                        <div class="primary-line"></div>
+                        <div class="checkout__order__total">
+                            <span style="float: left;">Total</span>
+                            <span id="total" style="float: right;">RWF 0.00</span>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- Place Order Button -->
                 </div>
-                <div class="checkout__order__handling-fee">
-                    <span style="float: left;"><b>Handling Fee</b></span>
-                    <span id="handling-fee" style="float: right;">RWF 0.00</span>
-                </div>
-                <div class="primary-line"></div>
-                <div class="primary-line"></div>
-                <div class="checkout__order__total">
-                    <span style="float: left;">Total</span>
-                    <span id="total" style="float: right;">RWF 0.00</span>
-                </div>
-            </div>           
-         </div>
             </div>
         </div>
     </section>
@@ -596,7 +615,8 @@ function loadOrderSummary() {
 document.addEventListener('DOMContentLoaded', loadOrderSummary);
 </script>
 
-<script src="path/to/pesapal.js"></script>
+
+
 <script type="module" src="login-script.js"></script>
 
 

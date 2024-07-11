@@ -273,31 +273,31 @@
     <!-- Hero Section End -->
 
 
-<!-- Wishlist Section Begin -->
-<section class="wishlist spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="shoping__cart__table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="shoping__product">Products</th>
-                                <th>Price</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody id="wishlist-items">
-                            <!-- Wishlist items will be dynamically inserted here -->
-                        </tbody>
-                    </table>
+    <!-- Wishlist Section Begin -->
+    <section class="wishlist spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shoping__cart__table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="wishlist-items">
+                                <!-- Wishlist items will be dynamically added here -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Wishlist Section End -->
-<!-- Wishlist Section End -->
+    </section>
+    <!-- Wishlist Section End -->
     <br><br>
     <br><br>
     <br><br>
@@ -387,44 +387,62 @@
         document.addEventListener('DOMContentLoaded', updateCartDisplay);
     </script>
 
+<!-- JavaScript Section -->
+<script>
+// Function to render wishlist items from localStorage
+function renderWishlist() {
+    const wishlistItems = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const wishlistContainer = document.getElementById('wishlist-items');
+
+    // Clear existing content
+    wishlistContainer.innerHTML = '';
+
+    if (wishlistItems.length === 0) {
+        wishlistContainer.innerHTML = '<tr><td colspan="4"><p>Nothing to see here yet.</p></td></tr>';
+        return;
+    }
+
+    wishlistItems.forEach((product, index) => {
+        // Create table row for each wishlist item
+        const row = `
+            <tr>
+                <td>${index + 1}</td>
+                <td><a href="${product.url}">${product.name}</a></td>
+                <td>RWF ${product.price} / Kg</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" onclick="removeFromWishlist(${index})">Remove</button>
+                </td>
+            </tr>
+        `;
+
+        wishlistContainer.innerHTML += row;
+    });
+}
+
+// Function to remove item from wishlist
+function removeFromWishlist(index) {
+    let wishlistItems = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    // Remove the item at the specified index
+    wishlistItems.splice(index, 1);
+
+    // Update localStorage with the modified wishlist items
+    localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
+
+    // Re-render the wishlist
+    renderWishlist();
+}
+
+// Call renderWishlist() when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    renderWishlist();
+});
+
+</script>
 
 
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', updateWishlistTable);
-    
-        function updateWishlistTable() {
-            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-            const wishlistTableBody = document.getElementById('wishlist-items');
-    
-            wishlistTableBody.innerHTML = '';
-    
-            wishlist.forEach(item => {
-                const tableRow = document.createElement('tr');
-                tableRow.innerHTML = `
-                    <td class="shoping__product">
-                        <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px;">
-                        <h5>${item.name}</h5>
-                    </td>
-                    <td>RWF ${item.price.toLocaleString()}</td>
-                    <td>
-                        <button class="btn btn-danger" onclick="removeFromWishlist('${item.name}')">Remove</button>
-                    </td>
-                `;
-                wishlistTableBody.appendChild(tableRow);
-            });
-        }
-    
-        function removeFromWishlist(productName) {
-            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-            const index = wishlist.findIndex(item => item.name === productName);
-            if (index !== -1) {
-                wishlist.splice(index, 1);
-                localStorage.setItem('wishlist', JSON.stringify(wishlist));
-                updateWishlistTable();
-            }
-        }
-    </script>
+
+        
 
     <script type="module" src="login-script.js"></script>
 

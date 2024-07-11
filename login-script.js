@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (greetingText && greetingSection) {
             const email = user.email;
             const username = email.split('@')[0]; // Extract the first part of the email address
-            greetingText.innerHTML = `<h2>Hello, ${username}! Start shopping now!</h2>`;
+            greetingText.innerHTML = `<h2>Hello, ${username}! Get your fresh meat now!</h2>`;
             greetingSection.style.display = 'block';
         }
     }

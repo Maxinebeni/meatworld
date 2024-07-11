@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
-    <link rel="shortcut icon" href="img/fav.png">
+    <link rel="shortcut icon" href="../img/fav.png">
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -67,19 +67,19 @@
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
-                        <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop-details.html">Shop</a></li>
-                            <li><a href="./shop-grid.html">About Us</a></li>
-                             <li><a href="#">Quick Links</a>
+                            <li class="active"><a href="/ogani/index.html">Home</a></li>
+                            <li><a href="/ogani/shop-details.html">Shop</a></li>
+                            <li><a href="/ogani/shop-grid.html">About Us</a></li>
+                            <li>
+                                <a href="#">Quick Links</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="mywishlist.html">My Wishlist</a></li>
-                                    <li><a href="./shoping-cart.html">My Shopping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
+                                    <li><a href="/ogani/mywishlist.html">My Wishlist</a></li>
+                                    <li><a href="/ogani/shoping-cart.html">My Shopping Cart</a></li>
+                                    <li><a href="/ogani/checkout.html">Check Out</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./contact.html">Contact</a></li>
-                            </ul>
+                            <li><a href="/ogani/contact.html">Contact</a></li>
+                        </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
@@ -274,7 +274,8 @@
                             </div>
                         </div>
                         <button onclick="addToCart()" class="primary-btn">ADD TO CART</button>
-                        <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                       <button onclick="addToWishlist()" class="heart-icon" title="Thinking about it? Add to wishlist"><span class="icon_heart_alt"></span></button>
+
                         <ul>
                             <li><b>Availability</b> <span>In Stock</span></li>
                             <li><b>Delivery</b> <span>Delivery Available. <samp>Fresh Quality Guaranteed.</samp></span></li>
@@ -505,6 +506,35 @@
     <script src="../js/owl.carousel.min.js"></script>
     <script src="../js/main.js"></script>
 
+    <script>        
+        // Function to add item to wishlist
+        function addToWishlist() {
+            const product = {
+                name: "Smoked Kassler (Pork LBoneless) ",
+                price: 11800,
+                url: window.location.href // The current page URL
+            };
+        
+            let wishlistItems = JSON.parse(localStorage.getItem('wishlist')) || [];
+        
+            // Check if the product is already in the wishlist
+            const isProductInWishlist = wishlistItems.some(item => item.name === product.name);
+        
+            if (isProductInWishlist) {
+                alert('Product is already in the wishlist!');
+                return;
+            }
+        
+            wishlistItems.push(product);
+            localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
+            
+            alert('Product added to wishlist!'); // Optional: Provide feedback to the user
+        }
+
+    </script>
+
+
+
 
     <script>
         function addToCart() {
@@ -512,8 +542,7 @@
                 name: "Smoked Kassler (Pork LBoneless) ",
                 price: 11800,
                 quantity: document.getElementById('quantity').value,
-                image: "../img/product/details/product-details-2.jpg"
-            };
+                            };
     
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             cart.push(product);
