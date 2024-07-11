@@ -40,7 +40,7 @@
                 </div>
                 <div class="humberger__menu__cart">
                     <ul>
-                        <li><a href="#"><i class="fa fa-heart"></i> <span id="wishlist-count">1</span></a></li>
+                        <li><a href="mywishlist.html"><i class="fa fa-heart"></i> <span id="wishlist-count">1</span></a></li>
                         <li><a href="shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span id="cart-count">0</span></a></li>
                     </ul>
                     <div class="header__cart__price">item: <span id="cart-price">RWF 0</span></div>
@@ -52,20 +52,21 @@
                 </div>
                 <nav class="humberger__menu__nav mobile-menu">
                                 <ul>
-                                    <li class="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="./shop-details.html">Shop</a></li>
-                                    <li><a href="./shop-grid.html">About Us</a></li>
-                                     <li><a href="#">Quick Links</a>
-                                        <ul class="header__menu__dropdown">
-                                            <li><a href="mywishlist.html">My Wishlist</a></li>
-                                            <li><a href="./shoping-cart.html">My Shopping Cart</a></li>
-                                            <li><a href="./checkout.html">Check Out</a></li>
-                                            <li><a id="logoutLink" href="#" >LOGOUT</a></li> 
-
-                                        </ul>
-                                    </li>
-                                    <li><a href="./contact.html">Contact</a></li>
+                                <li class="active"><a href="./index.html">Home</a></li>
+                                <li><a href="./shop-details.html">Shop</a></li>
+                                <li><a href="./shop-grid.html">About Us</a></li>
+                                 <li><a href="#">Quick Links</a>
+                                    <ul class="header__menu__dropdown">
+                                        <li><a href="mywishlist.html">My Wishlist</a></li>
+                                        <li><a href="./shoping-cart.html">My Shopping Cart</a></li>
+                                        <li><a href="./checkout.html">Check Out</a></li>
+                                        <li><a href="./careers.html">Careers</a></li>
+                                        <li><a href="./faqs-details.html">FAQs</a></li>
+                                        <li><a id="logoutLink" href="#" >Logout</a></li> 
                                     </ul>
+                                </li>
+                                <li><a href="./contact.html">Contact</a></li>
+                                </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
                 <div class="header__top__right__social">
@@ -134,17 +135,19 @@
                                     <li><a href="mywishlist.html">My Wishlist</a></li>
                                     <li><a href="./shoping-cart.html">My Shopping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a id="logoutLink" href="#" >LOGOUT</a></li> 
+                                    <li><a href="./careers.html">Careers</a></li>
+                                    <li><a href="./faqs-details.html">FAQs</a></li>
+                                    <li><a id="logoutLink" href="#" >Logout</a></li> 
                                 </ul>
                             </li>
                             <li><a href="./contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
+                            </ul>                   
+                         </nav>
                 </div>
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span id="wishlist-count">1</span></a></li>
+                            <li><a href="mywishlist.html"><i class="fa fa-heart"></i> <span id="wishlist-count">1</span></a></li>
                             <li><a href="shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span id="cart-count">0</span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span id="cart-price">RWF 0</span></div>
@@ -300,12 +303,12 @@
                     <div class="featured__controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".beef">Beef</li>
-                            <li data-filter=".pork">Pork</li>
-                            <li data-filter=".sausages">Sausages</li>
-                            <li data-filter=".chicken">Chicken</li>
-                            <li data-filter=".lamb">Lamb</li>
-                            <li data-filter=".charcuterie">Delicatessen </li>
+                            <li data-filter=".mix.beef">Beef</li>
+                            <li data-filter=".mix.pork">Pork</li>
+                            <li data-filter=".mix.sausages">Sausages</li>
+                            <li data-filter=".mix.chicken">Chicken</li>
+                            <li data-filter=".mix.lamb">Lamb</li>
+                            <li data-filter=".mix.charcuterie">Delicatessen </li>
                         </ul>
                     </div>
                 </div>
@@ -435,7 +438,6 @@
                 </div>
   
                 
-                
                 <!-- Pork Diced -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix pork">
                     <div class="featured__item">
@@ -509,6 +511,7 @@
                             <h5>RWF 9300 / Kg</h5>
                         </div>
                     </div>
+                </div>
 
                                 <!-- Biltong -->
                 <div class="col-lg-3 col-md-4 col-sm-6 mix beef">
@@ -2464,218 +2467,152 @@
     <!-- Footer Section End -->
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/ani.js"></script>
-    <script src="js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script src="js/mixitup.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/ani.js"></script>
+<script src="js/main.js"></script>
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          const wishlistButtons = document.querySelectorAll('.add-to-wishlist');
+<script>
+    function updateCartDisplay() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let totalQuantity = 0;
+        let totalPrice = 0;
+
+        cart.forEach(item => {
+            totalQuantity += parseInt(item.quantity, 10);
+            totalPrice += item.price * item.quantity;
+        });
+
+        document.querySelectorAll('#cart-count').forEach(el => el.innerText = totalQuantity);
+        document.querySelectorAll('#cart-price').forEach(el => el.innerText = `RWF ${totalPrice.toLocaleString()}`);
+    }
+
+    document.addEventListener('DOMContentLoaded', updateCartDisplay);
+</script>
+
+
+<script>
+// Toggle categories menu
+const categoriesToggle = document.querySelector('.hero__categories__all');
+const categoriesMenu = document.querySelector('.hero__categories ul');
+
+categoriesMenu.style.display = 'none'; // Hide by default
+
+categoriesToggle.addEventListener('click', function() {
+categoriesMenu.style.display = categoriesMenu.style.display === 'none' ? 'block' : 'none';
+});
+
+
+// Search functionality
+const searchForm = document.querySelector('.hero__search__form form');
+const searchInput = document.querySelector('.hero__search__form input');
+const featuredItems = document.querySelectorAll('.featured__item');
+
+searchForm.addEventListener('submit', function(event) {
+event.preventDefault();
+const searchQuery = searchInput.value.toLowerCase();
+
+featuredItems.forEach(item => {
+const itemName = item.querySelector('.featured__item__text h6 a').textContent.toLowerCase();
+if (itemName.includes(searchQuery)) {
+    item.style.display = 'block';
+} else {
+    item.style.display = 'none';
+}
+});
+});
+
+// Reset search results when input is cleared
+searchInput.addEventListener('input', function() {
+if (searchInput.value === '') {
+featuredItems.forEach(item => {
+    item.style.display = 'block';
+});
+}
+});
+</script> 
+
+
+
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          let allProducts = Array.from(document.querySelectorAll('.featured__item')); // Select products correctly
+          const tabButtons = document.querySelectorAll('.featured__controls li');
+          const productsPerPage = 12;
+          let currentPage = 1;
+          let currentTab = 'all'; // Store the current tab
       
-          wishlistButtons.forEach(button => {
-            button.addEventListener('click', function(event) {
-              event.preventDefault();
-              const button = event.target; // Get the button element
-              const productItem = button.closest('.featured__item');
-                
-              // Extract product information
-              const productName = productItem.querySelector('h6 a').innerText;
-              const productPrice = productItem.querySelector('.featured__item__text h5').innerText;
-              const productImage = productItem.querySelector('.set-bg').dataset.setbg;
+          function showPage(page, filteredProducts) {
+            const startIndex = (page - 1) * productsPerPage;
+            const endIndex = startIndex + productsPerPage;
       
-              const wishlistItem = {
-                name: productName,
-                price: productPrice,
-                image: productImage
-              };
+            filteredProducts.forEach((product, index) => {
+              product.style.display = (index >= startIndex && index < endIndex)? 'block' : 'none';
+            });
       
-              // Save to localStorage (you can replace this with your preferred method of saving data)
-              let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-              wishlist.push(wishlistItem);
-              localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+            document.getElementById('prev-button').disabled = page === 1;
+            document.getElementById('next-button').disabled = page === totalPages;
+          }
       
-              // Update UI to show item added to wishlist
-              const wishlistSpan = button.querySelector('span');
-              if (wishlistSpan) {
-                wishlistSpan.innerText = 'Added to Wishlist';
-              }      
-              // Display notification
-              alert('Item added to wishlist!');
+          tabButtons.forEach(button => {
+            let filteredProducts = []; // Initialize filtered products for each tab
       
-              // Update wishlist table
-              updateWishlistTable();
+            function filterProducts(category) {
+              filteredProducts = (category === 'all')? allProducts : allProducts.filter(product => product.classList.contains(category));
+      
+              if (category !== 'all') {
+                // Show all products on one page for specific tabs
+                filteredProducts.forEach(product => product.style.display = 'block');
+                // Remove pagination buttons for specific tabs
+                document.getElementById('prev-button').style.display = 'none';
+                document.getElementById('next-button').style.display = 'none';
+              } else {
+                // Keep pagination for the "All" tab
+                filteredProducts.forEach(product => product.style.display = 'none');
+                showPage(currentPage, filteredProducts);
+                document.getElementById('prev-button').style.display = 'block';
+                document.getElementById('next-button').style.display = 'block';
+              }
+            }
+      
+            button.addEventListener('click', function() {
+              const category = this.dataset.filter === '*'? 'all' : this.dataset.filter.slice(1);
+              tabButtons.forEach(btn => btn.classList.remove('active'));
+              this.classList.add('active');
+              currentTab = category; // Update the current tab
+              filterProducts(category);
             });
           });
-        });
       
-        function updateWishlistTable() {
-          const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-          const wishlistTableBody = document.getElementById('wishlist-items');
-      
-          wishlistTableBody.innerHTML = '';
-      
-          wishlist.forEach(item => {
-            const tableRow = document.createElement('tr');
-            tableRow.innerHTML = `
-              <td class="shoping__product">
-                <img src="${item.image}" alt="${item.name}">
-                <h5>${item.name}</h5>
-              </td>
-              <td>${item.price}</td>
-              <td>
-                <button class="btn btn-danger">Remove</button>
-              </td>
-            `;
-            wishlistTableBody.appendChild(tableRow);
+          document.getElementById('next-button').addEventListener('click', function() {
+            if (currentTab === 'all') {
+              currentPage++;
+              showPage(currentPage, allProducts);
+            }
           });
-        }
-      </script>    
-
-    <script>
-        function updateCartDisplay() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let totalQuantity = 0;
-            let totalPrice = 0;
-
-            cart.forEach(item => {
-                totalQuantity += parseInt(item.quantity, 10);
-                totalPrice += item.price * item.quantity;
-            });
-
-            document.querySelectorAll('#cart-count').forEach(el => el.innerText = totalQuantity);
-            document.querySelectorAll('#cart-price').forEach(el => el.innerText = `RWF ${totalPrice.toLocaleString()}`);
-        }
-
-        document.addEventListener('DOMContentLoaded', updateCartDisplay);
-    </script>
-
-
-    <script>
-        // Toggle categories menu
-        const categoriesToggle = document.querySelector('.hero__categories__all');
-        const categoriesMenu = document.querySelector('.hero__categories ul');
       
-        categoriesMenu.style.display = 'none'; // Hide by default
-      
-        categoriesToggle.addEventListener('click', function() {
-          categoriesMenu.style.display = categoriesMenu.style.display === 'none' ? 'block' : 'none';
-        });
-      
-        // Search functionality
-        const searchForm = document.querySelector('.hero__search__form form');
-        const searchInput = document.querySelector('.hero__search__form input');
-        const featuredItems = document.querySelectorAll('.featured__item');
-      
-        searchForm.addEventListener('submit', function(event) {
-          event.preventDefault();
-          const searchQuery = searchInput.value.toLowerCase();
-      
-          featuredItems.forEach(item => {
-            const itemName = item.querySelector('.featured__item__text h6 a').textContent.toLowerCase();
-            if (itemName.includes(searchQuery)) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
+          document.getElementById('prev-button').addEventListener('click', function() {
+            if (currentTab === 'all') {
+              currentPage--;
+              showPage(currentPage, allProducts);
             }
           });
         });
-      
-        // Reset search results when input is cleared
-        searchInput.addEventListener('input', function() {
-          if (searchInput.value === '') {
-            featuredItems.forEach(item => {
-              item.style.display = 'block';
-            });
-          }
-        });
       </script>
-
-
-
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-              const productsPerPage = 12;
-              let currentPage = 1;
-              const allProducts = document.querySelectorAll('.featured__item');
-              const tabButtons = document.querySelectorAll('.featured__controls li');
-          
-              function filterProducts(category) {
-                allProducts.forEach(product => {
-                  const categories = product.classList;
-                  if (categories.contains(category) || category === 'all') {
-                    product.style.display = 'block'; // Show the product
-                  } else {
-                    product.style.display = 'none'; // Hide the product
-                  }
-                });
-                showPage(1); // Reset to the first page after filtering
-                currentPage = 1; // Reset the current page to 1
-              }
-          
-              // Add event listeners to tab buttons
-              tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                  const category = this.dataset.filter === '*'? 'all' : this.dataset.filter.slice(1);
-                  filterProducts(category);
-                });
-              });
-          
-              // Pagination function
-              function showPage(page) {
-                const visibleProducts = Array.from(allProducts).filter(product => product.style.display!== 'none');
-                const totalPages = Math.ceil(visibleProducts.length / productsPerPage);
-          
-                // Hide all products
-                visibleProducts.forEach(product => {
-                  product.style.display = 'none';
-                });
-          
-                // Show products for the current page
-                const startIndex = (page - 1) * productsPerPage;
-                const endIndex = startIndex + productsPerPage;
-                for (let i = startIndex; i < endIndex; i++) {
-                  if (i < visibleProducts.length) {
-                    visibleProducts[i].style.display = 'block';
-                  }
-                }
-          
-                document.getElementById('prev-button').disabled = page === 1;
-                document.getElementById('next-button').disabled = page === totalPages;
-              }
-          
-              // Next and Previous button event listeners
-              document.getElementById('next-button').addEventListener('click', function() {
-                const totalPages = Math.ceil(Array.from(allProducts).filter(product => product.style.display!== 'none').length / productsPerPage);
-                if (currentPage < totalPages) {
-                  currentPage++;
-                  showPage(currentPage);
-                }
-              });
-          
-              document.getElementById('prev-button').addEventListener('click', function() {
-                if (currentPage > 1) {
-                  currentPage--;
-                  showPage(currentPage);
-                }
-              });
-          
-              // Initialize the first page
-              showPage(currentPage);
-            });
-          </script>                
-
-<script type="module" src="login-script.js"></script>
+      
+      
+      <script type="module" src="login-script.js"></script>
 
 
 

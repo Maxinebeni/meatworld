@@ -875,6 +875,7 @@ ul#cart-items li {
  .checkout__order__handling-fee {
         padding-bottom: 10px; /* Add padding to separate it from the total */
     }
+	
 
 
 .pagination-button {
@@ -886,7 +887,49 @@ ul#cart-items li {
     cursor: pointer;
 	justify-content: flex-end;
 
+}.order-summary-wrapper {
+    width: 100%; /* Adjust width as needed */
+    margin-left: auto; /* Align to the left */
+    margin-right: auto; /* Center the element horizontally */
 }
+/* Adjusting widths and padding for better layout */
+.checkout__order {
+    padding: 20px; /* Add padding if necessary */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    background-color: #fff; /* Optional: Add a background color */
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+/* Adjusting padding and margins for better alignment */
+.checkout__form {
+    margin-right: 20px; /* Adjust margin to move the form to the left */
+}
+
+/* Ensuring the form and order summary have enough space */
+@media (min-width: 992px) {
+    .col-lg-7 {
+        flex: 0 0 58.333333%; /* Adjust the width percentage as needed */
+    }
+
+    .col-lg-5 {
+        flex: 0 0 41.666667%; /* Adjust the width percentage as needed */
+    }
+}
+
+
+@media (min-width: 992px) {
+    .order-summary-wrapper {
+        width: 75%; /* Adjust this value for larger screens */
+    }
+}
+
+.checkout__order {
+    padding: 20px; /* Add padding if necessary */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    background-color: #fff; /* Optional: Add a background color */
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
 
 .pagination-button:disabled {
     background-color: #ccc;
