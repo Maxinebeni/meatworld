@@ -159,9 +159,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function resetHeaderToLogin() {
         const loginLinks = document.querySelectorAll('#loginLink');
         loginLinks.forEach(link => {
-            link.textContent = 'Login';
+            link.innerHTML = '<i class="fa fa-user"></i> Login';
         });
-        // Hide the logout link
+            // Hide the logout link
         document.querySelectorAll('#logoutLink').forEach(link => {
             link.style.display = 'none';
         });
