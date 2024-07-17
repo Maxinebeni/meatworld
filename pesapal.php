@@ -1,28 +1,24 @@
 <?php
 // pesapal.php
 
-// Replace these with your PesaPal consumer key and secret
 $consumerKey = "8gCRXw2zl80/8kAEHqEBdovTRF7jf2Sm";
 $consumerSecret = "1r09BX9nZMkANp5riWNRdMn48WU=";
 
 // PesaPal API endpoint
 $pesapal_endpoint = 'https://cybqa.pesapal.com/pesapalv3';
 
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get payment details from the form
-    $payment_method = $_POST['payment-method'];
     $address_line_1 = $_POST['address-line-1'];
     $city = $_POST['city'];
     $state = $_POST['state'];
     $country = $_POST['country'];
-    $first_name = $_POST['first-name']; // Get the first name from the form
-    $last_name = $_POST['last-name'];   // Get the last name from the form
-    $email = $_POST['email'];           // Get the email from the form
-    $phone_number = $_POST['phone-number']; // Get the phone number from the form
+    $first_name = $_POST['first-name']; 
+        $last_name = $_POST['last-name'];   
+    $email = $_POST['email'];           
+    $phone_number = $_POST['phone-number']; 
 
-    // Prepare the request data for PesaPal
-    $amount = 1000; // Example amount, you should dynamically set this based on cart total
+    // Prepare the request data for Pesapal dynamic amount from the Cart
+    $amount = 1000; 
     $currency = 'RWF';
     $description = 'Purchase from Meat World';
     $type = $payment_method === 'card'? 'MERCHANT' : 'MOBILE';
@@ -41,7 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $json_data = json_encode($data);
 
-    // Set HTTP Basic Auth headers
     $headers = array(
         'Authorization: Basic '. base64_encode($consumerKey. ':'. $consumerSecret),
         'Content-Type: application/json'

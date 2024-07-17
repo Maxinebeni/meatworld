@@ -1,8 +1,6 @@
 /*  ---------------------------------------------------
-    Template Name: Ogani
-    Description:  Ogani eCommerce  HTML Template
+    Description:  MeatwOrld eCommerce
     Author: Colorlib
-    Author URI: https://colorlib.com
     Version: 1.0
     Created: Colorlib
 ---------------------------------------------------------  */
