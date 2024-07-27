@@ -2492,6 +2492,15 @@
     
 
     <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const toggleButton = document.querySelector('.hero__categories__all');
+                const heroCategories = document.querySelector('.hero__categories');
+        
+                toggleButton.addEventListener('click', function() {
+                    heroCategories.classList.toggle('open');
+                });
+            });
+        
         document.addEventListener('DOMContentLoaded', function () {
         // Add click event listener to filter links
         const filterLinks = document.querySelectorAll('.filter-link');
