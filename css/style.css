@@ -3414,6 +3414,27 @@ ul#cart-items li {
     color: #f4b02b;
 }
 
+.p-padding {
+    padding-left: 30px;
+    padding-right: 30px;
+	text-align: justify;
+
+}
+/* Adjust spacing for the offered-area section */
+.offered-area {
+    margin-top: 0px; /* Adjust this value as needed to move the section up */
+    padding-top: 0; /* Optional: Adjust or remove if padding is causing extra space */
+}
+
+/* Optional: Adjust spacing for the container inside offered-area */
+.offered-area .container {
+	margin-top: 0px; /* Adjust this value as needed to move the section up */
+
+    padding-top: 0; /* Remove or adjust padding-top if there's extra space */
+}
+
+
+
 
 
 
@@ -3994,7 +4015,7 @@ ul#cart-items li {
 }
 .ftco-about .one-half {
   width: 100%;
-  padding: 30px 15px; }
+  padding: 10px 15px; }
   @media (min-width: 768px) {
     .ftco-about .one-half {
       padding: 5%;
@@ -4153,6 +4174,7 @@ ul#cart-items li {
 	margin-top:  10px;
 
 }
+
 
 .section-title{
 	margin-bottom: 30px;
