@@ -7,7 +7,7 @@ function loadCart() {
     const cartTotal = document.getElementById('cart-total');
     const cartCount = document.getElementById('cart-count');
     const cartPrice = document.getElementById('cart-price');
-    const handlingFee = 2500;
+    const handlingFee = 1500;
     let total = 0;
     let itemCount = 0;
 
@@ -83,11 +83,11 @@ function updateQuantity(index, quantity) {
     // Update the total price HTML elements
     const cartTotal = document.getElementById('cart-total');
     const cartPrice = document.getElementById('cart-price');
-    const handlingFee = 2500;
+    const handlingFee = 1500;
     const grandTotal = total + handlingFee; // Add handling fee
     cartTotal.innerHTML = `
         <li>Subtotal <span>RWF ${total.toLocaleString()}</span></li>
-        <li>Handling Fee <span>RWF 2500</span></li>
+        <li>Handling Fee <span>RWF 1500</span></li>
         <li>Total <span id="grand-total">RWF ${grandTotal.toLocaleString()}</span></li>
     `;
     cartPrice.textContent = `RWF ${grandTotal.toLocaleString()}`;

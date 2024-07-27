@@ -566,7 +566,7 @@ ol {
 -----------------------*/
 
 .hero {
-	padding-bottom: 50px;
+	padding-bottom: 30px;
 }
 
 .hero.hero-normal {
@@ -926,6 +926,65 @@ ul#cart-items li {
     .order-summary-wrapper {
         width: 75%; /* Adjust this value for larger screens */
     }
+}/* CSS */
+
+/* Hide the "All Products" dropdown, search bar, and phone number on mobile screens */
+@media (max-width: 767px) {
+    .hero__categories, .hero__search__form, .hero__search__phone {
+        display: none;
+    }
+    .mobile-hero-controls {
+        display: block;
+        margin-top: 10px;
+    }
+    .mobile-hero-controls .hero__categories__all {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
+    .mobile-hero-controls .hero__categories__list {
+        display: none;
+    }
+    .mobile-hero-controls .hero__categories__all i {
+        cursor: pointer;
+    }
+    .mobile-hero-controls .hero__categories__all i.fa-chevron-down {
+        display: none;
+    }
+    .mobile-hero-controls .hero__categories__all.active i.fa-chevron-up {
+        display: none;
+    }
+    .mobile-hero-controls .hero__categories__all.active i.fa-chevron-down {
+        display: inline-block;
+    }
+    .mobile-hero-controls .hero__categories__all.active + .hero__categories__list {
+        display: block;
+    }
+    .mobile-hero-controls .hero__search__phone h5 {
+        font-size: 14px;
+    }
+}
+
+/* Show the "All Products" dropdown, search bar, and phone number on larger screens */
+@media (min-width: 768px) {
+    .hero__categories__list {
+        display: block !important;
+    }
+    .mobile-hero-controls {
+        display: none;
+    }
+}
+
+.hamburger-menu {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .checkout__order {
@@ -1025,7 +1084,7 @@ ul#cart-items li {
 -----------------------*/
 
 .featured {
-    padding-top: 80px;
+    padding-top: 20px;
     padding-bottom: 40px;
 }
 
@@ -1307,6 +1366,8 @@ ul#cart-items li {
 .from-blog {
 	padding-top: 50px;
 	padding-bottom: 50px;
+	margin-top: 20px;
+
 }
 
 .from-blog .blog__item {
@@ -2561,13 +2622,15 @@ ul#cart-items li {
 
 .blog__item {
 	margin-bottom: 60px;
+	margin-top: 20px;
+
 }
 
 .blog__item__pic img {
 }
 
 .blog__item__text {
-	padding-top: 25px;
+	padding-top: 20px;
 }
 
 .blog__item__text ul {
@@ -2637,6 +2700,7 @@ ul#cart-items li {
 	opacity: 0.1;
 	content: "";
 }
+
 
 /*---------------------
   Blog Sidebar
@@ -2820,6 +2884,8 @@ ul#cart-items li {
 
 .blog__details__text {
 	margin-bottom: 45px;
+	margin-top: 20px;
+
 }
 
 .blog__details__text img {
@@ -2906,6 +2972,7 @@ ul#cart-items li {
 
 .footer {
 	background: #F3F6FA;
+	margin-top: 70px;
 	padding-top: 70px;
 	padding-bottom: 0;
 }
@@ -3675,6 +3742,7 @@ ul#cart-items li {
 	}
 	.shoping__cart__table {
 		overflow-y: auto;
+		margin-top: px;
 	}
 	.shoping__discount form input {
 		margin-bottom: 15px;
@@ -4073,6 +4141,18 @@ ul#cart-items li {
 .text-center {
   text-align: center;
 }
+.featurs-item {
+	background-color: #f9f9ff;
+	margin-top:  10px;
+
+}
+
+.section-title{
+	margin-bottom: 30px;
+
+
+}
+
 
 .single-offered {
   font-family: "Poppins", sans-serif;
